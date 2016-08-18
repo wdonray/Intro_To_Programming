@@ -46,19 +46,19 @@ int main()
 
 
 	//EXAMPLE 10
-	//Average Height
+	//avgheight
 
 
 	//EXAMPLE 11
-	//High Tax Rate
+	//HighTaxRate
 
 
 	//EXAMPLE 12
-	//Low Tax Rate
+	//LowTaxRate
 
 
 	//EXAMPLE 13
-	//Steam Libray Value
+	//StLibValue
 
 	//EXAMPLE 14
 	//int a= 121
@@ -78,11 +78,39 @@ int main()
 	//bool e= 0
 
 	//EXAMPLE 19
-	int a = 3;
-	int b = 4;
-	numa = a;
-		numb = b
-		printf("%i", numa);
+	/*int numa = 3;
+	int numb = 4;
+	int tmp= 0;
+
+	 tmp = numb;
+	 
+	 numb = numa;
+
+	 numa = tmp;
+
+
+	printf("%i", numa);
+	printf("%i", numb);*/
+
+	//EXAMPLE 20
+    //int i = 1;
+	//float f = 0;
+	//char ch = 'a';
+	//std::cin >> i >> ch >> f; 
+	//std::cout << "i: " << i << "\nch: " << ch << "\nf: " << f << std::endl;
+
+	//EXAMPLE 21
+	
+//int a = 1;
+//int b = 2;
+//int c = 3;
+//int d = 4;
+//int e = 5;
+//printf("%i", (a + b + c + d + e) / 5);
+
+
+
+
 
 
 	system("pause");
