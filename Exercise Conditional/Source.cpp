@@ -78,7 +78,7 @@ int main()
 	 
 	int larry;
 	int garry;
-
+	s
 	std::cin >> larry >> garry;
 
 
