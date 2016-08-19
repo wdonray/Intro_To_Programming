@@ -55,16 +55,45 @@ int main()
 	if (sum > 0)
 
 	{
-		
+		for (int i = 2; i >= 0; i++)
+		{
+			for (int k = 2; k > 0; k--)
+			{
+				if (num[k] < num[k - 1])
+				{
+					int please;
+					please = num[k];
+					num[k] = num[k - 1];
+					num[k - 1] = please;
+				}
 
+			}
+
+		}
 
 	}
 
 	else if (sum < 0)
 
-	{
-		
-	}
+{
+		for (int i = 2; i >= 0; i--)
+		{
+			for (int k = 2; k > 1; k--)
+			{
+				if (num[k] > num[k - 1])
+				{
+					int please;
+					please = num[k];
+					num[k] = num[k - 1];
+					num[k - 1] = please;
+				}
+
+			}
+
+		}
+
+}
+	
 	else 
 
 	{
@@ -73,7 +102,7 @@ int main()
 			std::cout << num[i] << " ";
 		}
 	}
-	std::cout << sum;
+	std::cout << num[0] << num[1] << num[2];
 
 	//Number 4
 	//int choice;
