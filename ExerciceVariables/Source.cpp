@@ -90,8 +90,8 @@ int main()
 
 
 	printf("%i", numa);
-	printf("%i", numb);*/
-
+	printf("%i", numb);
+*/
 	//EXAMPLE 20
     //int i = 1;
 	//float f = 0;
@@ -108,14 +108,12 @@ int main()
 //int e = 5;
 //printf("%i", (a + b + c + d + e) / 5);
 
-//char f;
-//char p;
-//std::cin >> f >> p;
-//char k;
-//k = ((int)f + (int)p) / 2;
-//printf("%c", k);
-
-
+char f;
+char p;
+std::cin >> f >> p;
+char k;
+k = ((int)f + (int)p) / 2;
+printf("%c", k);
 
 
 
