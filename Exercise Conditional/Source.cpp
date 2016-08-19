@@ -39,17 +39,41 @@ int main()
 
 	//Number 3 
 
-	//int angle;
-	//int bear;
-	//int car;
-	//int drive;
-	//int exit;
 
-	//std::cin >> angle >> bear >> car >> drive >> exit;
+	int num[3];
+	int sum = 0;
+	std::cin >> num[0] >> num[1] >> num[2]; 
+	
+	
+	for (int i = 0; i < 3; i++) 
 
-	//int sum = (angle + bear + car + drive + exit);
+	{
+		sum = sum + num[i];
+	
+	}
+	
+	if (sum > 0)
 
-	//printf("%i", sum);
+	{
+		
+
+
+	}
+
+	else if (sum < 0)
+
+	{
+		
+	}
+	else 
+
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			std::cout << num[i] << " ";
+		}
+	}
+	std::cout << sum;
 
 	//Number 4
 	//int choice;
@@ -135,7 +159,7 @@ int main()
 	}*/
 
 //Number 7
-
+//for int i=1;i<100;i++)
 //int month;
 //std::cin >> month;
 //switch (month)
