@@ -107,14 +107,14 @@ int main()
 //int d = 4;
 //int e = 5;
 //printf("%i", (a + b + c + d + e) / 5);
-
-char f;
-char p;
-std::cin >> f >> p;
-char k;
-k = ((int)f + (int)p) / 2;
-printf("%c", k);
-
+//
+//char f;
+//char p;
+//std::cin >> f >> p;
+//char k;
+//k = ((int)f + (int)p) / 2;
+//printf("%c", k);
+//
 
 
 
