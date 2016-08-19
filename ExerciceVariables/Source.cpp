@@ -75,7 +75,7 @@ int main()
 	//int d= 100000
 
 	//EXAMPLE 18
-	//bool e= 0
+	//bool e= false
 
 	//EXAMPLE 19
 	/*int numa = 3;

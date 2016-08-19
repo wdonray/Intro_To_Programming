@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: Exercise Conditional, Configuration: Debug Win32 ------
+1>The project file "C:\Users\donray.williams\Documents\GitHub\Exercise Conditional\Exercise Conditional\Exercise Conditional.vcxproj" was not found.
+1>The project file "C:\Users\donray.williams\Documents\GitHub\Exercise Conditional\Exercise Conditional\Exercise Conditional.vcxproj" was not found.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

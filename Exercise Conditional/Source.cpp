@@ -2,7 +2,7 @@
 
 int main()
 {
-//Number 1
+	//Number 1
 	//	int y = 0;
 	//	int x;
 	//	
@@ -14,7 +14,7 @@ int main()
 	// 
 	//	std::cout << x;
 
-//Number 2
+	//Number 2
 
 	//printf("Please input two whole numbers :)");
 
@@ -37,7 +37,7 @@ int main()
 
 
 
-//Number 3 
+	//Number 3 
 
 	//int angle;
 	//int bear;
@@ -51,7 +51,7 @@ int main()
 
 	//printf("%i", sum);
 
-//Number 4
+	//Number 4
 	//int choice;
 	//switch (choice)
 	//{
@@ -75,11 +75,48 @@ int main()
 	//	std::cout << "Invalid";
 	//	break;
 	//}
-	 
+
+//Number 6
+
 	int larry;
 	int garry;
-	s
-	std::cin >> larry >> garry;
+	int awns;
+	char some;
+
+	std::cin >> larry >> some >> garry;
+	
+
+	switch ((int)some)
+	{
+		case 43:
+			awns = larry + garry;
+				std::cout << awns << std::endl;
+		break;
+
+		case 45:
+			awns = larry - garry;
+			std::cout << awns << std::endl;
+		break;
+
+		case 42:
+			awns = larry * garry;
+			std::cout << awns << std::endl;
+		break;
+
+		case 47:
+			awns = larry / garry;
+			std::cout << awns << std::endl;
+		break;
+
+		case 37:
+
+			awns = larry % garry;
+			std::cout << awns << std::endl;
+
+		break;
+
+	}
+
 
 
 
