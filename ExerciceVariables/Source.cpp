@@ -2,47 +2,54 @@
 int main()
 {
 	//EXAMPLE 1
-	//int num = 2/3 + 3/5;
-	//printf("%i", num);
+	int num = 2/3 + 3/5;
+	printf("%i", num);
+	//0
 
 	//EXAMPLE 2
-	//int num = 2%3 + 3%5;
-	//printf("%i", num);
+	int num = 2%3 + 3%5;
+	printf("%i", num);
+	//5
 
 
 	//EXAMPLE 3
-	//int num = 23 % 15 % -2;
-	//printf("%i", num);
-
+	int num = 23 % 15 % -2;
+	printf("%i", num);
+	//0
 
 	//EXAMPLE 4
-	//int num = 25*1/2;
-	//printf("%i", num);
+	int num = 25*1/2;
+	printf("%i", num);
+	//12
 
 
 	//EXAMPLE 5
-	//int num = 25*1.0/2;
-	//printf("%i", num);*/
-
+	int num = 25*1.0/2;
+	printf("%i", num);
+	//12
 
 	//EXAMPLE 6
-	//int num = 25*(1/2);
-	//printf("%i", num);
+	int num = 25*(1/2);
+	printf("%i", num);
+	//0
 
 
 	//EXAMPLE 7
-	//int num = 235/8+7;
-	//printf("%i", num);
+	int num = 235/8+7;
+	printf("%i", num);
+	//36
 
 
 	//EXAMPLE 8
-	//int num = 235/8.07;
-	//printf("%i", num);
+	int num = 235/8.07;
+	printf("%i", num);
+	//29
 
 
 	//EXAMPLE 9
-	//int num = ((20+1) /2-2.0) /(23+3) *0.2;
-	//printf("%i", num);
+	int num = ((20+1) /2-2.0) /(23+3) *0.2;
+	printf("%i", num);
+	//0
 
 
 	//EXAMPLE 10
