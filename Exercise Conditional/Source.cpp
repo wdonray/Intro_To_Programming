@@ -3,106 +3,106 @@
 int main()
 {
 	//Number 1
-	//	int y = 0;
-	//	int x;
-	//	
-	//	if (y == 0) 
-	//
-	//	{
-	//		x = 100;
-	//	}
-	// 
-	//	std::cout << x;
+	/*	int y = 0;
+		int x;
+		
+		if (y == 0) 
+	
+		{
+			x = 100;
+		}
+	 
+		std::cout << x;*/
 
 	//Number 2
 
-	//printf("Please input two whole numbers :)");
+	/*printf("Please input two whole numbers :)");
 
-	//int y;
-	//int x;
+	int y;
+	int x;
 
-	//std::cin >> y >> x;
+	std::cin >> y >> x;
 
-	//if (x > y)
+	if (x > y)
 
-	//{
+	{
 
-	//	printf("%i", x);
+		printf("%i", x);
 
-	//}
+	}
 
-	//else if (y > x)
+	else if (y > x)
 
-	//	printf("%i", y);
-
+		printf("%i", y);
+*/
 
 
 	//Number 3 
 
 
-	int num[3];
-	int sum = 0;
-	std::cin >> num[0] >> num[1] >> num[2]; 
-	
-	
-	for (int i = 0; i < 3; i++) 
-
-	{
-		sum = sum + num[i];
-	
-	}
-	
-	if (sum > 0)
-
-	{
-		for (int i = 2; i >= 0; i++)
-		{
-			for (int k = 2; k > 0; k--)
-			{
-				if (num[k] < num[k - 1])
-				{
-					int please;
-					please = num[k];
-					num[k] = num[k - 1];
-					num[k - 1] = please;
-				}
-
-			}
-
-		}
-
-	}
-
-	else if (sum < 0)
-
-{
-		for (int i = 2; i >= 0; i--)
-		{
-			for (int k = 2; k > 1; k--)
-			{
-				if (num[k] > num[k - 1])
-				{
-					int please;
-					please = num[k];
-					num[k] = num[k - 1];
-					num[k - 1] = please;
-				}
-
-			}
-
-		}
-
-}
-	
-	else 
-
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			std::cout << num[i] << " ";
-		}
-	}
-	std::cout << num[0] << num[1] << num[2];
+//	int num[3];
+//	int sum = 0;
+//	std::cin >> num[0] >> num[1] >> num[2]; 
+//	
+//	
+//	for (int i = 0; i < 3; i++) 
+//
+//	{
+//		sum = sum + num[i];
+//	
+//	}
+//	
+//	if (sum > 0)
+//
+//	{
+//		for (int i = 2; i >= 0; i++)
+//		{
+//			for (int k = 2; k > 0; k--)
+//			{
+//				if (num[k] < num[k - 1])
+//				{
+//					int please;
+//					please = num[k];
+//					num[k] = num[k - 1];
+//					num[k - 1] = please;
+//				}
+//
+//			}
+//
+//		}
+//
+//	}
+//
+//	else if (sum < 0)
+//
+//{
+//		for (int i = 2; i >= 0; i--)
+//		{
+//			for (int k = 2; k > 1; k--)
+//			{
+//				if (num[k] > num[k - 1])
+//				{
+//					int please;
+//					please = num[k];
+//					num[k] = num[k - 1];
+//					num[k - 1] = please;
+//				}
+//
+//			}
+//
+//		}
+//
+//}
+//	
+//	else 
+//
+//	{
+//		for (int i = 0; i < 3; i++)
+//		{
+//			std::cout << num[i] << " ";
+//		}
+//	}
+//	std::cout << num[0] << num[1] << num[2];
 
 	//Number 4
 	//int choice;
@@ -145,50 +145,49 @@ int main()
 
 //Number 6
 
-	/*int larry;
-	int garry;
-	float awns;
-	char some;
+	//int larry;
+	//int garry;
+	//float awns;
+	//char some;
 
-	std::cin >> larry >> some >> garry;
-	
+	//std::cin >> larry >> some >> garry;
+	//
 
-	switch ((int)some)
-	{
-		case 43:
-			awns = (float)larry + (float)garry;
-				std::cout << awns << std::endl;
-		break;
+	//switch ((int)some)
+	//{
+	//	case 43:
+	//		awns = (float)larry + (float)garry;
+	//			std::cout << awns << std::endl;
+	//	break;
 
-		case 45:
-			awns = (float)larry - (float)garry;
-			std::cout << awns << std::endl;
-		break;
+	//	case 45:
+	//		awns = (float)larry - (float)garry;
+	//		std::cout << awns << std::endl;
+	//	break;
 
-		case 42:
-			awns = (float)larry * (float)garry;
-			std::cout << awns << std::endl;
-		break;
+	//	case 42:
+	//		awns = (float)larry * (float)garry;
+	//		std::cout << awns << std::endl;
+	//	break;
 
-		case 47:
-			awns = (float)larry / (float)garry;
-			std::cout << awns << std::endl;
-		break;
+	//	case 47:
+	//		awns = (float)larry / (float)garry;
+	//		std::cout << awns << std::endl;
+	//	break;
 
-		case 37:
+	//	case 37:
 
-			awns = larry % garry;
-			std::cout << awns << std::endl;
+	//		awns = larry % garry;
+	//		std::cout << awns << std::endl;
 
-		break;
+	//	break;
 
-		default:
-			std::cout << "Invalid" << std::endl;
+	//	default:
+	//		std::cout << "Invalid" << std::endl;
 
-	}*/
+	//}
 
 //Number 7
-//for int i=1;i<100;i++)
 //int month;
 //std::cin >> month;
 //switch (month)
