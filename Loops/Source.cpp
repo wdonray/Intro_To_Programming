@@ -1,7 +1,8 @@
 #include <iostream>
 int main()
 {
-	//Exercise 1:
+	//Exercise 1:
+
 	for (int i = 100; i >= 0; i--)
 
 		printf("%i", i);

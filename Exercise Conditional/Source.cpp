@@ -250,11 +250,19 @@ int main()
 //g. (numPos < 66) || (flag && numPos > 35) =  False 
 //h. ++numPos == 36 = True
 //i.numPos++ == 36 = True
-//j. (frstChar == ‘j’) || (frstChar == ‘J’) = True ///Number 9 //a. (a || b) || (a && b) = False 
+//j. (frstChar == ‘j’) || (frstChar == ‘J’) = True 
+
+///Number 9 
+
+
+//a. (a || b) || (a && b) = False 
 //b. !((!a) && (a)) || (a && b) =  True
 //c. !((5 || a) || (!b)) && (!(a) && b) = 
 //d.a || b && a = False 
-//e. !a&&b = True
+//e. !a&&b = True
+
+
+
 
 
 
