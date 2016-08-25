@@ -17,7 +17,7 @@ int main()
 			std::cout << num[i] << "" << std::endl;
 		}
 	}
-		break;
+	break;
 
 	case 1:
 	{
@@ -41,34 +41,34 @@ int main()
 		//int blanks[]; Invalid incomplete 
 		//int collection[-20] Invalid size of array must be greater than 0
 	}	//int hours[3] = 8, 12, 16; Invalid not scoped 
-		break;
+	break;
 
 	case 2:
 	{
 		int values[] = { 2,6,10,14 };
-		
-			//std::cout << values[2];
-				//prints 10
-			//std::cout << ++values[0];
-				//prints 3
-			//std::cout << values[1]++;
-				//prints 6
-			//int x = 2;
-			//std::cout << values[++x];
-				//prints 14
-			//std::cout << values[4];
-				//Given default number
+
+		//std::cout << values[2];
+			//prints 10
+		//std::cout << ++values[0];
+			//prints 3
+		//std::cout << values[1]++;
+			//prints 6
+		//int x = 2;
+		//std::cout << values[++x];
+			//prints 14
+		//std::cout << values[4];
+			//Given default number
 	}
 	break;
 
 	case 3:
 	{
-			int array[] = { 10,9,8,7,6,5,4,3,2,1 };
+		int array[] = { 10,9,8,7,6,5,4,3,2,1 };
 
-				for (int i = 0; i < 10; i++)
-				{
-					std::cout << array[i] << "" << std::endl;
-				}
+		for (int i = 0; i < 10; i++)
+		{
+			std::cout << array[i] << "" << std::endl;
+		}
 	}
 	break;
 
@@ -79,7 +79,7 @@ int main()
 		std::cin >> num[0] >> num[1] >> num[2] >> num[3] >> num[4];
 
 		for (int i = 4; i >= 0 && i <= 4; i--)
-			
+
 		{
 			std::cout << num[i] << "" << std::endl;
 		}
@@ -89,34 +89,32 @@ int main()
 	case 5:
 	{
 		int num[10];
-	
+
 		for (int i = 0; i < 10; i++)
 
 		{
 			std::cin >> num[i];
-	
-		}
-		
-			for (int i = 0; i >= -10; i--)
-			{
-				for (int k = 0; k < 10; k++)
-				{
-					if (num[k] < num[k + 1])
-					{
-						int please;
-						please = num[k];
-						num[k] = num[k + 1];
-						num[k + 1] = please;
-					}
 
+		}
+
+		for (int i = 0; i >= -10; i--)
+		{
+			for (int k = 0; k < 10; k++)
+			{
+				if (num[k] < num[k + 1])
+				{
+					int please;
+					please = num[k];
+					num[k] = num[k + 1];
+					num[k + 1] = please;
 				}
 
 			}
-				
-				{
-					std::cout << num[0] << " " << num[9] << std::endl;
-				}
-		
+
+		}
+
+		std::cout << num[0] << " " << num[9] << std::endl;
+
 	}
 	break;
 
@@ -130,27 +128,47 @@ int main()
 			{
 
 				last[i][h] = a;
+
+				std::cout << last[i][h] << " ";
+
 				a++;
+
 				if (h < 2)
 				{
 					std::cout << " ";
 				}
 				else
 				{
-					std::cout << last[i][h] << std::endl;
+					std::cout << std::endl;
 				}
 			}
 		}
-		
-	
-
 	}
 	break;
 	case 7:
 	{
-		int days[29][5];		for (int i = 0; i < 29; i++)		{			int sum = 0;			for (int p = 0; p < 5; p++)			{				days[i][p] = i;				sum = sum + days[i][p];			}			std::cout << "\n Sum of row no. (" << i << ") is: " << sum;		}
+		int days[29][5];
+		for (int i = 0; i < 29; i++)
+		{
+			int sum = 0;
+			for (int p = 0; p < 5; p++)
+			{
+				days[i][p] = i;
+				sum = sum + days[i][p];
+			}
 
-		for (int i = 0; i < 5; i++)		{			int sum = 0;			for (int p = 0; p < 29; p++)			{				sum = sum + days[p][i];			}			std::cout << "\n Sum of col no. (" << i << ") is: " << sum;		}
+			std::cout << "\n Sum of row no. (" << i << ") is: " << sum;
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			int sum = 0;
+			for (int p = 0; p < 29; p++)
+			{
+				sum = sum + days[p][i];
+			}
+			std::cout << "\n Sum of col no. (" << i << ") is: " << sum;
+		}
 	}
 	break;
 
@@ -158,37 +176,37 @@ int main()
 
 	{
 		int hp[] = { 100, 100, 100, 100, 100 };
-		int num; 
+		int num;
 
 		std::cout << "Select a Loser to attack [0-4]" << std::endl;
 
 		for (int i = 0; i < 5;)
 
+		{
+			std::cin >> num;
+
+			std::cout << "Loser" << " " << num << " " << "has" << " " << hp[num] << std::endl;
+
+			std::cout << std::endl;
+
+			std::cout << "~You swing your trusty short sword!~" << std::endl;
+
+			std::cout << std::endl;
+
+			if (hp[num] < 0)
+
 			{
-				std::cin >> num;
-			
-				std::cout << "Loser" << " " << num << " " << "has" << " " << hp[num] << std::endl;
-
-				std::cout << std::endl;
-
-				std::cout << "~You swing your trusty short sword!~" << std::endl;
-
-				std::cout << std::endl;
-
-				if (hp[num] < 0)
-
-				{
-					std::cout << " Yo don't beat a dead horse!" << std::endl;
-				}
-
-				else
-				{
-					i++;
-					hp[num] = hp[num] - 40;
-					std::cout << "You dealt 40 damage!" << " " << "[Loser" << " " << num << " " << "has" << " " << hp[num] << "HP" << " " << "remaining]" << std::endl;
-				}
-
+				std::cout << " Yo don't beat a dead horse!" << std::endl;
 			}
+
+			else
+			{
+				i++;
+				hp[num] = hp[num] - 40;
+				std::cout << "You dealt 40 damage!" << " " << "[Loser" << " " << num << " " << "has" << " " << hp[num] << "HP" << " " << "remaining]" << std::endl;
+			}
+
+		}
 
 
 		std::cout << std::endl;
@@ -210,33 +228,86 @@ int main()
 	case 9:
 	{
 		int eat[3][7];
-		for (int i = 0; i < 3; i++)
+		int t;
 
+		int sum[] = { 0,0,0,0 };
+
+
+		for (int i = 0; i < 3; i++)
 		{
-			std::cin >> eat[3][7];
+			for (int p = 0; p < 7; p++)
+			{
+				eat[i][p] = i;
+				sum[3] = sum[3] + eat[i][p];
+			}
 		}
 
-		for (int i = 0; i >= 3; i--)
+		for (int p = 0; p < 7; p++)
+		{
+			sum[0] = sum[0] + eat[0][p];
+		}
+		for (int p = 0; p < 7; p++)
+		{
+			sum[1] = sum[1] + eat[1][p];
+		}
+		for (int p = 0; p < 7; p++)
+		{
+			sum[2] = sum[2] + eat[2][p];
+		}
+
+		for (int k = 0; k < 3; k++)
+		{
+			std::cout << "Enter a number for drake # " << k + 1 << ": " << std::endl;
+			std::cin >> sum[k];
+		}
+
+		std::cout << "Average amount of food eaten per day by all drakes: " << sum[3] / 21 << std::endl;
+		std::cout << std::endl;
+
+		for (int i = 0; i < 3; i++)
+		{
+			std::cout << "Average amount of food eaten per day by " << sum[i] << ": " << sum[i] / 7 << std::endl;
+			std::cout << std::endl;
+		}
+
+		for (int i = 0; i < 3; i++)
 		{
 			for (int k = 0; k < 7; k++)
 			{
-				if (num[k] < num[k + 1])
+				for (int p = 0; p < 6; p++)
 				{
-					int please;
-					please = num[k];
-					num[k] = num[k + 1];
-					num[k + 1] = please;
+					if (eat[i][p] < eat[i][p + 1])
+					{
+						t = eat[i][p];
+						eat[i][p] = eat[i][p + 1];
+						eat[i][p + 1] = t;
+					}
 				}
-
 			}
-
 		}
-	}
-	break;
 
+		for (int k = 0; k < 3; k++)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				if (eat[i][0] < eat[i + 1][0])
+				{
+					t = eat[i][0];
+					eat[i][0] = eat[i + 1][0];
+					eat[i + 1][0] = t;
+				}
+			}
+		}
+		std::cout << "The greatest amout of food eaten during a day: " << eat[0][0] << std::endl;
+		std::cout << std::endl;
+		std::cout << "The lowest amout of food eaten during a day: " << eat[2][6] << std::endl;
+		std::cout << std::endl;
 	}
+		break;
+	
 
+	
+	}
 	system("pause");
 	return 0;
 }
-
