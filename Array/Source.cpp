@@ -131,8 +131,14 @@ int main()
 
 				last[i][h] = a;
 				a++;
-
-				std::cout << last[i][h] << std::endl;
+				if (h < 2)
+				{
+					std::cout << " ";
+				}
+				else
+				{
+					std::cout << last[i][h] << std::endl;
+				}
 			}
 		}
 		
@@ -140,7 +146,96 @@ int main()
 
 	}
 	break;
+	case 7:
+	{
+		int days[29][5];		for (int i = 0; i < 29; i++)		{			int sum = 0;			for (int p = 0; p < 5; p++)			{				days[i][p] = i;				sum = sum + days[i][p];			}			std::cout << "\n Sum of row no. (" << i << ") is: " << sum;		}
+
+		for (int i = 0; i < 5; i++)		{			int sum = 0;			for (int p = 0; p < 29; p++)			{				sum = sum + days[p][i];			}			std::cout << "\n Sum of col no. (" << i << ") is: " << sum;		}
 	}
+	break;
+
+	case 8:
+
+	{
+		int hp[] = { 100, 100, 100, 100, 100 };
+		int num; 
+
+		std::cout << "Select a Loser to attack [0-4]" << std::endl;
+
+		for (int i = 0; i < 5;)
+
+			{
+				std::cin >> num;
+			
+				std::cout << "Loser" << " " << num << " " << "has" << " " << hp[num] << std::endl;
+
+				std::cout << std::endl;
+
+				std::cout << "~You swing your trusty short sword!~" << std::endl;
+
+				std::cout << std::endl;
+
+				if (hp[num] < 0)
+
+				{
+					std::cout << " Yo don't beat a dead horse!" << std::endl;
+				}
+
+				else
+				{
+					i++;
+					hp[num] = hp[num] - 40;
+					std::cout << "You dealt 40 damage!" << " " << "[Loser" << " " << num << " " << "has" << " " << hp[num] << "HP" << " " << "remaining]" << std::endl;
+				}
+
+			}
+
+
+		std::cout << std::endl;
+
+		for (int i = 0; i < 5; i++)
+		{
+			std::cout << "Player " << i << " Has " << hp[i] << " HP " << " Remaining " << std::endl;
+		}
+		std::cout << std::endl;
+		{
+			std::cout << "You were meant to lose..." << std::endl;
+
+		}
+
+	}
+
+	break;
+
+	case 9:
+	{
+		int eat[3][7];
+		for (int i = 0; i < 3; i++)
+
+		{
+			std::cin >> eat[3][7];
+		}
+
+		for (int i = 0; i >= 3; i--)
+		{
+			for (int k = 0; k < 7; k++)
+			{
+				if (num[k] < num[k + 1])
+				{
+					int please;
+					please = num[k];
+					num[k] = num[k + 1];
+					num[k + 1] = please;
+				}
+
+			}
+
+		}
+	}
+	break;
+
+	}
+
 	system("pause");
 	return 0;
 }
