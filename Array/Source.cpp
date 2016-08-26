@@ -148,9 +148,28 @@ int main()
 	break;
 	case 7:
 	{
-		int days[29][5];		for (int i = 0; i < 29; i++)		{			int sum = 0;			for (int p = 0; p < 5; p++)			{				days[i][p] = i;				sum = sum + days[i][p];			}			std::cout << "\n Sum of row no. (" << i << ") is: " << sum;		}
+		int days[29][5];
+		for (int i = 0; i < 29; i++)
+		{
+			int sum = 0;
+			for (int p = 0; p < 5; p++)
+			{
+				days[i][p] = i;
+				sum = sum + days[i][p];
+			}
 
-		for (int i = 0; i < 5; i++)		{			int sum = 0;			for (int p = 0; p < 29; p++)			{				sum = sum + days[p][i];			}			std::cout << "\n Sum of col no. (" << i << ") is: " << sum;		}
+			std::cout << "\n Sum of row no. (" << i << ") is: " << sum;
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			int sum = 0;
+			for (int p = 0; p < 29; p++)
+			{
+				sum = sum + days[p][i];
+			}
+			std::cout << "\n Sum of col no. (" << i << ") is: " << sum;
+		}
 	}
 	break;
 
