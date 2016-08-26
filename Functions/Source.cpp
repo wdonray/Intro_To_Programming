@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <time.h>
 
+
 float smallnum2();
 float Half4(float);
 int CoinToss5();
@@ -11,7 +12,11 @@ int MinInArray9(int[], int);
 void MultiplyByIndex10(int[], int[], int);
 int Number11(int[], int[], int[], int);
 int Number12(int[], int);
- 
+int Number13(int[], int, int);
+int Split(int[], int, int[], int[]);
+int powerfunction();
+int looketsay(int[], int);
+void rps();
 
 /*
 1.  What is the output of this program?
@@ -64,17 +69,37 @@ int main()
 	MultiplyByIndex10(integer_array, output_array, 7);
 	//output_array should be {0, 15, 14, 12, 52, 95, 48};
 	
-
 	Question 11
 	int arrayin[5] = { 1, 2, 3 , 5 , 9 };
 	int arrayout[5] = { 2, 3, 5, 8 , 10 };
 	int arraythree[5] = {};
 	Number11(arrayin, arrayout, arraythree, 5);
-	*/
+	
 
+	Question 12 
 	int array_input[] = { 3,2,4,7 };
 	int sum = Number12(array_input, 4);
+
+	Question  13
+	int arrayin[4] = { 1, 2, 3, 4 };
+	 Number13(arrayin, 4, 4);
 	
+	Question 14
+	int arrayin[4] = { 1, 2, 3, 4 };
+	int arrayout1[2] = {};
+	int arrayout2[2] = {};
+	Split( arrayin, 4, arrayout1, arrayout2);
+	
+	Question 15
+	powerfunction();
+	
+	Question 16
+	int arrayin[10] = { 1, 1, 1, 3, 5, 2, 6, 7, 3, 7, };
+	looketsay(arrayin, 10);
+	*/
+
+	 rps();
+
 
 	system("pause");
 	return 0;
@@ -144,7 +169,7 @@ toss the coin, and then simulates the tossing of the coin that number of times.
 int CoinToss5()
 
 {
-
+	srand(time(NULL));
 	int throws;
 	int randNum;
 	int num = rand();
@@ -160,11 +185,11 @@ int CoinToss5()
 			switch (randNum)
 			{
 			case 1:
-				std::cout << "~It's Heads! " << std::endl;
+				std::cout << "~ It's Heads! " << std::endl;
 				std::cout << std::endl;
 				break;
 			case 2:
-				std::cout << "~It's Tails! " << std::endl;
+				std::cout << "~ It's Tails! " << std::endl;
 				std::cout << std::endl;
 				break;
 			}
@@ -346,5 +371,228 @@ int Number12(int array_input[], int s)
 	return 0;
 }
 
+/*
+13. Write a function that searches for a particular number in an array.The function should
+have three parameters : the array, the array size, and the number to be found.If the
+number is in the array, the function should return the position of the number in the array.
+If the number isn’t found, the function should return -1. In the case that the desired
+number appears more than once in the array, the function should return the position of
+the first occurrence.Write your own code to test this function.
+*/
+
+int Number13(int arrayin[], int a, int size )
+{
+	for (int i = 0; i < size; i++)
+
+	{
+
+		if (arrayin[i] = a);
+
+		{
+			return i;
+		}
+
+		return -1;
+	}
+
+}
+
+/*
+14. Write a function named Split that accepts one input array of integers, an integer for the
+size of the input array, and two output arrays.All numbers in the input array that are
+positive are copied into the first output array and all numbers in the input array that are
+negative are copied into the second output array.The function should return how many
+numbers were copied into the first output array.Write your own code to test this function.
+*/
+
+int Split(int arrayin[], int size, int arrayout1[], int arrayout2[] )
+
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (arrayin[i] > 0)
+		{
+			arrayout1[i] = arrayin[i];
+		}
+		else (arrayin[i] < 0);
+		{
+			arrayout2[i] = arrayin[i];
+		}
+	
+	}
+	return 2;
+}
 
 
+/*
+15. Write a function that calculates and then returns x to the power of y.
+*/
+
+int powerfunction()
+
+{
+	int x = 5;
+	int y = 2;
+	int sum = x;
+
+	for (int i = 1; i < y; i++)
+	{
+		sum *= x;
+	}
+	std::cout << sum << std::endl;
+	return sum;
+}
+
+/*
+16. Write a function that takes in an array of integers, and the size of the array. The function
+should print out the “look and say” sequence for the array. The look and say sequence
+works by printing out how many of the same number there are in a row followed by that
+number.
+
+For example, if the array was {1, 1, 1, 1} the function would print out “4, 1” because there
+are four ones.
+If the array was {1, 2, 2, 2, 3, 4} the function would print out “1,1,3,2,1,3,1,4” because there
+is “one 1, three 2s, one 3, one 4”.
+If the array is {1,2,2,1,5,1,1,7,7,7,7,1,1,1,1,1,1,1,1} the function should print out
+“1,1,2,2,1,1,1,5,2,1,4,7,8,1”
+*/
+
+int looketsay(int arrayin[], int num )
+
+{
+	int x = 1;
+	for (int i = 0; i < num; i++)
+	{
+		while (arrayin[i] == arrayin[i + 1])
+		{
+			int x = 1;
+			i++;
+			x++;
+		}
+		std::cout << x << "," << arrayin[i] << std::endl;
+	}
+	return 0;
+}
+
+/*
+17. Write a program that lets the user play the game of Rock, Paper, Scissors against the
+computer. The program should work as follows:
+1. When the program begins, a random number in the range of 1 - 3 is generated. If
+the number is 1, then the computer has chosen rock. If the number is 2, then the
+computer has chosen paper. So if the number is 3 then the computer has chosen
+scissors.
+2. The user enters their choice of “rock”, “paper” or “scissors”
+3. The computer’s choice is displayed.
+4. A winner is selected according to the following rules:
+1. Rock beats scissors, scissors beats paper, paper beats rock
+2. If there is a tie then the game must be replayed
+5. Make sure to break the game up into functions to perform each task. Make sure to
+look for any code that is repeated, and break it out into a function.
+*/
+
+void rps()
+
+{
+	srand(time(NULL));
+	std::cout << "1 - Rock " << "2 - Paper " << "3 - Scissors " << std::endl;
+	int choice;
+	std::cin >> choice;
+	int pcchoice;
+	pcchoice = rand() % 3 + 1;
+	
+	switch (choice)
+	{
+	case 1:
+	{
+		switch (pcchoice)
+		{
+		case 1:
+		{
+			std::cout << "LOSER" << std::endl;
+		}
+
+		break;
+
+		case 2:
+		{
+			std::cout << "WINNER" << std::endl;
+		}
+
+		break;
+
+		case 3:
+		{
+			std::cout << "You tied... Try agian! " << std::endl;
+		}
+		}
+		break;
+	}
+
+
+
+
+
+	case 2:
+	{
+		switch (pcchoice)
+		{
+		case 1:
+		{
+			std::cout << "LOSER" << std::endl;
+		}
+
+		break;
+
+		case 2:
+		{
+			std::cout << "WINNER" << std::endl;
+		}
+
+		break;
+
+		case 3:
+		{
+			std::cout << "You tied... Try agian! " << std::endl;
+		}
+
+		break;
+		}
+	}
+	break;
+
+
+
+
+
+
+	case 3:
+	{
+		switch (pcchoice)
+		{
+		case 1:
+		{
+			std::cout << "LOSER" << std::endl;
+		}
+
+		break;
+
+		case 2:
+		{
+			std::cout << "WINNER" << std::endl;
+		}
+
+		break;
+
+		case 3:
+		{
+			std::cout << "You tied... Try agian! " << std::endl;
+		}
+
+		break;
+		}
+	}
+	break;
+
+	}
+
+}
