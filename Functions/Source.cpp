@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <time.h>
 
-
 float smallnum2();
 float Half4(float);
 int CoinToss5();
@@ -16,7 +15,7 @@ int Number13(int[], int, int);
 int Split(int[], int, int[], int[]);
 int powerfunction();
 int looketsay(int[], int);
-void rps();
+void rps(int, int);
 
 /*
 1.  What is the output of this program?
@@ -46,60 +45,63 @@ void rps();
 
 int main()
 {
-/*
-	 Question 7
-	int result = SumTo7(3); //result = 1 + 2 + 3 = 6
-	std::cout << result << std::endl;
-	result = SumTo7(15); //result should now be 120
-	std::cout << result << std::endl;
+	/*
+		 Question 7
+		int result = SumTo7(3); //result = 1 + 2 + 3 = 6
+		std::cout << result << std::endl;
+		result = SumTo7(15); //result should now be 120
+		std::cout << result << std::endl;
 
-	Question 8
-	int integer_array[] = { 7, 3, 2, 4, 9 };
-	int sum = Array8(integer_array, 5); //result = 25
-	std::cout << sum << std::endl;
+		Question 8
+		int integer_array[] = { 7, 3, 2, 4, 9 };
+		int sum = Array8(integer_array, 5); //result = 25
+		std::cout << sum << std::endl;
 
-	Question 9 
-	int integer_array[] = { 10, 15, 7, 4, 13, 19, 8 };
-	int sum = MinInArray9(integer_array, 7); //result = 4
-	std::cout << sum << std::endl;
+		Question 9
+		int integer_array[] = { 10, 15, 7, 4, 13, 19, 8 };
+		int sum = MinInArray9(integer_array, 7); //result = 4
+		std::cout << sum << std::endl;
 
-	Question 10
-	int integer_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
-	int output_array[7] = {};
-	MultiplyByIndex10(integer_array, output_array, 7);
-	//output_array should be {0, 15, 14, 12, 52, 95, 48};
+		Question 10
+		int integer_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
+		int output_array[7] = {};
+		MultiplyByIndex10(integer_array, output_array, 7);
+		//output_array should be {0, 15, 14, 12, 52, 95, 48};
+
+		Question 11
+		int arrayin[5] = { 1, 2, 3 , 5 , 9 };
+		int arrayout[5] = { 2, 3, 5, 8 , 10 };
+		int arraythree[5] = {};
+		Number11(arrayin, arrayout, arraythree, 5);
+
+
+		Question 12
+		int array_input[] = { 3,2,4,7 };
+		int sum = Number12(array_input, 4);
+
+		Question  13
+		int arrayin[4] = { 1, 2, 3, 4 };
+		 Number13(arrayin, 4, 4);
+
+		Question 14
+		int arrayin[4] = { 1, 2, 3, 4 };
+		int arrayout1[2] = {};
+		int arrayout2[2] = {};
+		Split( arrayin, 4, arrayout1, arrayout2);
+
+		Question 15
+		powerfunction();
+
+		Question 16
+		int arrayin[10] = { 1, 1, 1, 3, 5, 2, 6, 7, 3, 7, };
+		looketsay(arrayin, 10);
+		*/
+	srand(time(NULL));
+	std::cout << "1 - Rock " << "2 - Paper " << "3 - Scissors " << std::endl;
+	int pcchoice = 0;
+	int choice = 0;
 	
-	Question 11
-	int arrayin[5] = { 1, 2, 3 , 5 , 9 };
-	int arrayout[5] = { 2, 3, 5, 8 , 10 };
-	int arraythree[5] = {};
-	Number11(arrayin, arrayout, arraythree, 5);
-	
-
-	Question 12 
-	int array_input[] = { 3,2,4,7 };
-	int sum = Number12(array_input, 4);
-
-	Question  13
-	int arrayin[4] = { 1, 2, 3, 4 };
-	 Number13(arrayin, 4, 4);
-	
-	Question 14
-	int arrayin[4] = { 1, 2, 3, 4 };
-	int arrayout1[2] = {};
-	int arrayout2[2] = {};
-	Split( arrayin, 4, arrayout1, arrayout2);
-	
-	Question 15
-	powerfunction();
-	
-	Question 16
-	int arrayin[10] = { 1, 1, 1, 3, 5, 2, 6, 7, 3, 7, };
-	looketsay(arrayin, 10);
-	*/
-
-	 rps();
-
+	rps(choice, pcchoice);
 
 	system("pause");
 	return 0;
@@ -184,14 +186,14 @@ int CoinToss5()
 			randNum = rand() % 2 + 1;
 			switch (randNum)
 			{
-			case 1:
-				std::cout << "~ It's Heads! " << std::endl;
-				std::cout << std::endl;
-				break;
-			case 2:
-				std::cout << "~ It's Tails! " << std::endl;
-				std::cout << std::endl;
-				break;
+				case 1:
+					std::cout << "~ It's Heads! " << std::endl;
+					std::cout << std::endl;
+					break;
+				case 2:
+					std::cout << "~ It's Tails! " << std::endl;
+					std::cout << std::endl;
+					break;
 			}
 		}
 		return num;
@@ -275,10 +277,10 @@ int  Array8(int integer_array[], int size)
 	//						  0  1  2  3  4
 	//int integer_array[5] = {7, 3, 2, 4, 9};
 
-	
+
 	for (int x = 0; x < size; x++)
 		sum += integer_array[x];
-	
+
 
 	return sum;
 }
@@ -300,7 +302,7 @@ int MinInArray9(int integer_array[], int size)
 
 			sum = integer_array[x];
 	}
-		return sum;
+	return sum;
 }
 /*
 10. Write a function that takes as its parameter an array called input_array of integers, the
@@ -336,10 +338,10 @@ int Number11(int arrayin[], int arrayout[], int arraythree[], int size) //Is thi
 {
 	int x = 0;
 	int sum;
-	
-	for (int x = 0; x < size; x ++)
+
+	for (int x = 0; x < size; x++)
 	{
-		sum = arrayin[x] + arrayout[x]; 
+		sum = arrayin[x] + arrayout[x];
 		arraythree[x] = sum;
 		std::cout << sum << std::endl;
 	}
@@ -357,7 +359,7 @@ this function
 int Number12(int array_input[], int s)
 
 {
-	int sum = 0; 
+	int sum = 0;
 	for (int x = 0; x < 2; x++)
 	{
 		for (int y = 0; y < s; y++)
@@ -380,7 +382,7 @@ number appears more than once in the array, the function should return the posit
 the first occurrence.Write your own code to test this function.
 */
 
-int Number13(int arrayin[], int a, int size )
+int Number13(int arrayin[], int a, int size)
 {
 	for (int i = 0; i < size; i++)
 
@@ -405,7 +407,7 @@ negative are copied into the second output array.The function should return how 
 numbers were copied into the first output array.Write your own code to test this function.
 */
 
-int Split(int arrayin[], int size, int arrayout1[], int arrayout2[] )
+int Split(int arrayin[], int size, int arrayout1[], int arrayout2[])
 
 {
 	for (int i = 0; i < size; i++)
@@ -418,7 +420,7 @@ int Split(int arrayin[], int size, int arrayout1[], int arrayout2[] )
 		{
 			arrayout2[i] = arrayin[i];
 		}
-	
+
 	}
 	return 2;
 }
@@ -457,8 +459,7 @@ If the array is {1,2,2,1,5,1,1,7,7,7,7,1,1,1,1,1,1,1,1} the function should prin
 “1,1,2,2,1,1,1,5,2,1,4,7,8,1”
 */
 
-int looketsay(int arrayin[], int num )
-
+int looketsay(int arrayin[], int num)
 {
 	int x = 1;
 	for (int i = 0; i < num; i++)
@@ -490,109 +491,81 @@ scissors.
 look for any code that is repeated, and break it out into a function.
 */
 
-void rps()
+void rps(int choice, int pcchoice)
 
 {
-	srand(time(NULL));
-	std::cout << "1 - Rock " << "2 - Paper " << "3 - Scissors " << std::endl;
-	int choice;
-	std::cin >> choice;
-	int pcchoice;
-	pcchoice = rand() % 3 + 1;
-	
-	switch (choice)
+
+	bool win = false;
+	while (win == false)
 	{
-	case 1:
-	{
-		switch (pcchoice)
+		std::cin >> choice;
+
+		pcchoice = rand() % 3 + 1;
+		switch (choice)
+		
 		{
-		case 1:
-		{
-			std::cout << "LOSER" << std::endl;
-		}
+			case 1:
+			{
+				switch (pcchoice)
+				{
+					case 1:
+						std::cout << "LOSER" << std::endl;
+						break;
 
-		break;
+					case 2:
+						win = true;
+						std::cout << "WINNER" << std::endl;
+						break;
 
-		case 2:
-		{
-			std::cout << "WINNER" << std::endl;
-		}
+					case 3:
+						std::cout << "You tied... Try agian! " << std::endl;
+						break;
+				}
+			}
+			break;
 
-		break;
+			case 2:
+			{
+				switch (pcchoice)
+				{
+					case 1:
+						std::cout << "LOSER" << std::endl;
+						break;
 
-		case 3:
-		{
-			std::cout << "You tied... Try agian! " << std::endl;
-		}
-		}
-		break;
-	}
+					case 2:
+						win = true;
+						std::cout << "WINNER" << std::endl;
+						break;
 
+					case 3:
+						std::cout << "You tied... Try agian! " << std::endl;
+						break;
+				}
+			}
+			break;
 
+			case 3:
+			{
+				switch (pcchoice)
+				{
+					case 1:
+						std::cout << "LOSER" << std::endl;
+						break;
 
+					case 2:
+						win = true;
+						std::cout << "WINNER" << std::endl;
+						break;
 
+					case 3:
+						std::cout << "You tied... Try agian! " << std::endl;
+						break;
+				}
+			}
+			break;
 
-	case 2:
-	{
-		switch (pcchoice)
-		{
-		case 1:
-		{
-			std::cout << "LOSER" << std::endl;
-		}
-
-		break;
-
-		case 2:
-		{
-			std::cout << "WINNER" << std::endl;
-		}
-
-		break;
-
-		case 3:
-		{
-			std::cout << "You tied... Try agian! " << std::endl;
-		}
-
-		break;
-		}
-	}
-	break;
-
-
-
-
-
-
-	case 3:
-	{
-		switch (pcchoice)
-		{
-		case 1:
-		{
-			std::cout << "LOSER" << std::endl;
-		}
-
-		break;
-
-		case 2:
-		{
-			std::cout << "WINNER" << std::endl;
-		}
-
-		break;
-
-		case 3:
-		{
-			std::cout << "You tied... Try agian! " << std::endl;
-		}
-
-		break;
+			system("pause");
 		}
 	}
-	break;
-
-	}
-
 }
+
