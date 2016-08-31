@@ -96,7 +96,7 @@ void Variables()
 	std::cout << "-----------------------------------------" << std::endl;
 	std::cout << "			Problem : 4 " << std::endl;
 	std::cout << "-----------------------------------------" << std::endl;
-
+	std::cout << std::endl;
 	int numa = 5;
 	int numb = 7;	//First create 2 intergers with any 2 given numbers, then create a temporary one that holds the value of 0. 
 	int tmp = 0;
@@ -105,7 +105,8 @@ void Variables()
 	numb = numa;	//Then create a simple swap statment that uses tmp to hold a value while you are swapping. 
 	numa = tmp;
 
-	std::cout << "Numa is now " << numa << std::endl << "Numb is now " << numb << std::endl; //Then print to console
+	std::cout << "Numa is now " << numa << std::endl << std::endl << "Numb is now " << numb << std::endl;
+	std::cout << std::endl; //Then print to console
 	/*
 	5. Consider the following code segment. Note: Do not implement it yet. 
 
@@ -123,9 +124,9 @@ void Variables()
 
 	//std::cout << "a) 1 A 45 = i: 1 ch: A f: 45 " << std::endl << "b) 1A45 = 1 ch: A f: 45 " << std::endl << "c) 1 9 45 = 1 9 45" << std::endl << "d) 1 945 = " << std::endl << "e) B 45.6" << std::endl << "f) 1BC5.6" << std::endl;
 
-	int i = 0;
-	float f = 0;
-	char ch = 'a';
-	std::cin >> i >> ch >> f;
-	std::cout << "i: " << i << "\nch: " << ch << "\nf: " << f << std::endl;
+	//int i = 0;
+	//float f = 0;
+	//char ch = 'a';
+	//std::cin >> i >> ch >> f;
+	//std::cout << "i: " << i << "\nch: " << ch << "\nf: " << f << std::endl;
 }
