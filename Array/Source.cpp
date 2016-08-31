@@ -222,28 +222,6 @@ int main()
 
 		case 9:
 		{
-			/*int eat[3][7];
-			for (int i = 0; i < 3; i++)
-
-			{
-				std::cin >> eat[3][7];
-			}
-
-			for (int i = 0; i >= 3; i--)
-			{
-				for (int k = 0; k < 7; k++)
-				{
-					if (num[k] < num[k + 1])
-					{
-						int please;
-						please = num[k];
-						num[k] = num[k + 1];
-						num[k + 1] = please;
-					}
-
-				}
-
-			}*/
 			int dragons[3][7] = {
 					{25, 23, 23, 21, 15, 5 , 1}, // First 
 					{33, 12, 5, 5, 10, 25, 25}, // Second	
