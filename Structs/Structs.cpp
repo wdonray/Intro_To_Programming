@@ -30,7 +30,7 @@ int Fight(Zombie &z, Ninja &n)
 	}
 	z.spirit -= 1;
 	//Subtracts 1 spirit each turn
-	std::cout << "The Zombie used 1 Spirit point [Spirit is now] -> |" << z.spirit << "| \n \n";
+	std::cout << "The Zombie used 1 Spirit point [Spirit is now] -> |" << z.spirit << "| \n";
 	std::cout << "----------------------------------------------------- \n";
 	//Fighting is when a ninja or zombie does "damage" to the other
 	//Damage is when health variable is decremented of either ninja or zombie
@@ -51,13 +51,13 @@ int main()
 	Ninja wilson = { 100, true, 20 };
 
 	char input = '0'; //What does this mean?
-	std::cout << "		------------------------------------------------ \n \n";
-	std::cout << "		Hello NewComer and Welcome to Zombie Vs. Ninja! \n \n";
-	std::cout << "		------------------------------------------------ \n \n";
+	std::cout << "		-----------------------------------------------\n \n";
+	std::cout << "		Hello NewComer and Welcome to Zombie Vs. Ninja!  \n \n";
+	std::cout << "		----------------------------------------------- \n \n";
 	std::cout << "		In this tutorial you will play as Chris[Zombie]						who is fighting Regi[Ninja]. \n \n";
-	std::cout << "		~~~~~~~~~~~~~~~~~Instructions~~~~~~~~~~~~~~~~~ \n";
+	std::cout << "		~~~~~~~~~~~~~~~~~Instructions~~~~~~~~~~~~~~~~~~ \n";
 	std::cout << "		Press 'a' Key to attack or 'q' to exit game...\n";
-	std::cout << "		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n \n";
+	std::cout << "		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n \n";
 	bool trigger = false;
 	while (input != 'q') //Loops the entire process also makes it if you press Q it exits game 
 	{
