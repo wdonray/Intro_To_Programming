@@ -100,11 +100,43 @@ void Variables()
 	std::cout << "-----------------------------------------" << "\n";
 	std::cout << "			Problem : 5 " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
+
 	std::cout << "a) 1 A 45 = i: 1 ch: A f: 45 " << "\n \n" << "b) 1A45 = i: 1 ch: A f: 45 " << "\n \n" << "c) 1 9 45 = i: 1 ch: 9 f: 45" << "\n \n" << "d) 1 945 = i: 1 ch: 9 f: 45 " << "\n \n" << "e) B 45.6 = i: 0 ch: a f: 0" << "\n \n" << "f) 1BC5.6 = i: 1 ch: B f: 0" << "\n \n";
 	/*
 	6. Ask the user for 5 while numbers. Output the average of these numbers.
 	*/
 	std::cout << "-----------------------------------------" << "\n";
 	std::cout << "			Problem : 6 " << "\n";
+	std::cout << "-----------------------------------------" << "\n \n";
+
+	int p = 1;
+	int o = 2;		//Set 5 intergers to equal any chosen 5 numbers 
+	int u = 3;
+	int t = 40;
+	int r = 500;
+	std::cout << "The total of all the numbers are : " << p + o + u + t + r << "\n \n";		//Then simply add all 5 together in cout 
+	/*
+	7. Write a program that determines the letter that lies halfway between two letters of the
+	alphabet as input by the user. For example, if the user inputs ‘A’ and ‘Z’, the output should
+	be ‘M’. Do you know how to deal with upper vs. lower case letters? Does it matter if the
+	letters are input in reverse order?
+	*/
+	std::cout << "-----------------------------------------" << "\n";
+	std::cout << "			Problem : 7 " << "\n";
+	std::cout << "-----------------------------------------" << "\n \n";
+
+	char first;
+	char sec;
+	char sum;
+
+	std::cin >> first >> sec;
+
+	sum = ((int)first + (int)sec) / 2;		//The (int) in front of the variables that are assinged char can now represent a
+											//number that you find the middle by just defining the whole thing by 2.
+
+	std::cout << "The middle letter is : " << sum << "\n \n";
+
+	std::cout << "-----------------------------------------" << "\n";
+	std::cout << "			F I N " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
 }
