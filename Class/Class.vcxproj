@@ -110,7 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Classcpp.cpp" />
+    <ClCompile Include="Class.cpp" />
+    <ClCompile Include="ProjectZom.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ProjectZom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
