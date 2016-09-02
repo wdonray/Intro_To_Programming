@@ -5,9 +5,8 @@ int main()
 {
 
 	srand(time(NULL));
-	char toss = 1;
+	int toss = 0;
 	int randNum;
-	int num = rand();
 	bool gameRunning = true;
 	while (gameRunning)
 	{
@@ -36,6 +35,7 @@ int main()
 					std::cout << "You WIN \n";
 					gameRunning = false;
 				}
+
 				else
 				{
 					std::cout << "You Lose \n";
@@ -45,6 +45,6 @@ int main()
 		}
 	}
 	system("pause");
-	return num;
+	return 0;
 }
 
