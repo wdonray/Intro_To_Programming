@@ -16,7 +16,7 @@ void Zombie::attack(Zombie & defender)
 	const char * o = defender.m_occupation.c_str();
 	const char * u = this-> m_occupation.c_str();
 	
-	std::cout << "The remaining hp of the first Zombie is [" << defender.m_hp << "] he was a " << u << "!\n \n";
+	std::cout << "The remaining hp of the first Zombie is [" << defender.m_hp << "] he was a " << o << "!\n \n";
 
-	std::cout << "The remaining hp of the second Zombie is [" << this -> m_hp << "] he was a " << o << "!\n \n";
+	std::cout << "The remaining hp of the second Zombie is [" << this -> m_hp << "] he was a " << u << "!\n \n";
 }
