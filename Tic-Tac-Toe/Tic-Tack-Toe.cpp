@@ -14,11 +14,11 @@ void TicTacToe()
 {
 
 	std::cout << "Welcome to Tic Tac Toe! You are X, computer is O \n \nthe game shall begin once you enter a placement number. \n \n";
-	bool Win = false;
+	bool win = false;
 	do
 	{
 		char theGrid[] = { 219,219,219,219,219,219,219,219,219 };
-		while (Win == false)
+		while (win == false)
 		{
 			int userChoice;
 			std::cin >> userChoice;
@@ -43,35 +43,35 @@ void TicTacToe()
 					std::cout << std::endl;
 				}
 			}
-			for (int j = 3; j < 6; j++)
+			for (int x = 3; x < 6; x++)
 			{
-				if (theGrid[j] == 'X' && theGrid[j - 3] == 'X' && theGrid[j + 3] == 'X')
-					Win = true;
+				if (theGrid[x] == 'X' && theGrid[x - 3] == 'X' && theGrid[x + 3] == 'X')
+					win = true;
 			}
-			for (int j = 1; j < 8; j += 3)
+			for (int x = 1; x < 8; x += 3)
 			{
-				if (theGrid[j] == 'X' && theGrid[j - 1] == 'X' && theGrid[j + 1] == 'X')
-					Win = true;
+				if (theGrid[x] == 'X' && theGrid[x - 1] == 'X' && theGrid[x + 1] == 'X')
+					win = true;
 			}
 			if (theGrid[4] == 'X' && theGrid[0] == 'X' && theGrid[8] == 'X')
-				Win = true;
+				win = true;
 			if (theGrid[4] == 'X' && theGrid[2] == 'X' && theGrid[6] == 'X')
-				Win = true;
-			for (int j = 3; j < 6; j++)
+				win = true;
+			for (int x = 3; x < 6; x++)
 			{
-				if (theGrid[j] == 'O' && theGrid[j - 3] == 'O' && theGrid[j + 3] == 'O')
-					Win = true;
+				if (theGrid[x] == 'O' && theGrid[x - 3] == 'O' && theGrid[x + 3] == 'O')
+					win = true;
 			}
-			for (int j = 1; j < 8; j += 3)
+			for (int x = 1; x < 8; x += 3)
 			{
-				if (theGrid[j] == 'O' && theGrid[j - 1] == 'O' && theGrid[j + 1] == 'O')
-					Win = true;
+				if (theGrid[x] == 'O' && theGrid[x - 1] == 'O' && theGrid[x + 1] == 'O')
+					win = true;
 			}
 			if (theGrid[4] == 'O' && theGrid[0] == 'O' && theGrid[8] == 'O')
-				Win = true;
+				win = true;
 			if (theGrid[4] == 'O' && theGrid[2] == 'O' && theGrid[6] == 'O')
-				Win = true;
+				win = true;
 			std::cout << std::endl;
 		}
-	} while (Win == false);
+	} while (win == false);
 }
