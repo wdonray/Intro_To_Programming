@@ -1,38 +1,40 @@
 #include <iostream>
 #include <time.h>
-#include<windows.h>
+#include <windows.h>
 
 void TicTacToe();
 
 int main()
 {
+	srand(time(NULL));
 	TicTacToe();
-	system("return");
+	system("pause");
 	return 0;
 }
 void TicTacToe()
 {
 
-	std::cout << "Welcome to Tic Tac Toe! You are X, computer is O \n \nthe game shall begin once you enter a placement number. \n \n";
+	std::cout << "Welcome to Tic Tac Toe! You are x, computer is o \n \nthe game shall begin once you enter a placement number. \n \n";
 	bool win = false;
 	do
 	{
-		char theGrid[] = { 219,219,219,219,219,219,219,219,219 };
+		char theGrid[] = { 219,219,219,219,219,219,219,219,219, };
 		while (win == false)
 		{
 			int userChoice;
 			std::cin >> userChoice;
-			while (theGrid[userChoice - 1] == 'X' || theGrid[userChoice - 1] == 'O')
+			system("cls");
+			while (theGrid[userChoice - 1] == 'x' || theGrid[userChoice - 1] == 'o')
 			{
 				std::cin >> userChoice;
 			}
-			theGrid[userChoice - 1] = 'X';
+			theGrid[userChoice - 1] = 'x';
 			int pcChoice = rand() % 9 + 1;
-			while (theGrid[pcChoice - 1] == 'X' || theGrid[pcChoice - 1] == 'O')
+			while (theGrid[pcChoice - 1] == 'x' || theGrid[pcChoice - 1] == 'o')
 			{
 				pcChoice = rand() % 9 + 1;
 			}
-			theGrid[pcChoice - 1] = 'O';
+			theGrid[pcChoice - 1] = 'o';
 			for (int i = 1; i < 10; i++)
 			{
 				{
@@ -40,38 +42,61 @@ void TicTacToe()
 				}
 				if (i % 3 == 0)
 				{
-					std::cout << std::endl;
+					std::cout << "\n \n";
 				}
 			}
 			for (int x = 3; x < 6; x++)
 			{
-				if (theGrid[x] == 'X' && theGrid[x - 3] == 'X' && theGrid[x + 3] == 'X')
+				if (theGrid[x] == 'x' && theGrid[x - 3] == 'x' && theGrid[x + 3] == 'x')
+				{
+					std::cout << "You Win. \n \n";
 					win = true;
+				}
 			}
 			for (int x = 1; x < 8; x += 3)
 			{
-				if (theGrid[x] == 'X' && theGrid[x - 1] == 'X' && theGrid[x + 1] == 'X')
+				if (theGrid[x] == 'x' && theGrid[x - 1] == 'x' && theGrid[x + 1] == 'x')
+				{
+					std::cout << "You Win. \n \n";
 					win = true;
+				}
 			}
-			if (theGrid[4] == 'X' && theGrid[0] == 'X' && theGrid[8] == 'X')
+			if (theGrid[4] == 'x' && theGrid[0] == 'x' && theGrid[8] == 'x')
+			{
+				std::cout << "You Win. \n \n";
 				win = true;
-			if (theGrid[4] == 'X' && theGrid[2] == 'X' && theGrid[6] == 'X')
+			}
+			if (theGrid[4] == 'x' && theGrid[2] == 'x' && theGrid[6] == 'x')
+			{
+				std::cout << "You Win. \n \n";
 				win = true;
+			}
 			for (int x = 3; x < 6; x++)
 			{
-				if (theGrid[x] == 'O' && theGrid[x - 3] == 'O' && theGrid[x + 3] == 'O')
+				if (theGrid[x] == 'o' && theGrid[x - 3] == 'o' && theGrid[x + 3] == 'o')
+				{
+					std::cout << "You Lose. \n \n";
 					win = true;
+				}
 			}
 			for (int x = 1; x < 8; x += 3)
 			{
-				if (theGrid[x] == 'O' && theGrid[x - 1] == 'O' && theGrid[x + 1] == 'O')
+				if (theGrid[x] == 'o' && theGrid[x - 1] == 'o' && theGrid[x + 1] == 'o')
+				{
+					std::cout << "You Lose. \n \n";
 					win = true;
+				}
 			}
-			if (theGrid[4] == 'O' && theGrid[0] == 'O' && theGrid[8] == 'O')
+			if (theGrid[4] == 'o' && theGrid[0] == 'o' && theGrid[8] == 'o')
+			{
+				std::cout << "You Lose. \n \n";
 				win = true;
-			if (theGrid[4] == 'O' && theGrid[2] == 'O' && theGrid[6] == 'O')
+			}
+			if (theGrid[4] == 'o' && theGrid[2] == 'o' && theGrid[6] == 'o')
+			{
+				std::cout << "You Lose. \n \n";
 				win = true;
-			std::cout << std::endl;
+			}
 		}
 	} while (win == false);
 }
