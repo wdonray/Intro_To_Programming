@@ -100,10 +100,7 @@ int main()
 	
 		~7~
 		None shall work.
-		ptr_b needs a * in front 
-		
-	
-
+		ptr_b needs a * in front to fix some of the errors
 	
 	int * ptr_a, ptr_b, *ptr_c;
 	ptr_a = new int;
@@ -124,9 +121,6 @@ int main()
 	ptr_a = NULL;
 
 	*/
-	
-	
-	
 	system("pause");
 	return 0;
 }
