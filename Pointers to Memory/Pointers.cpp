@@ -1,8 +1,8 @@
 #include <iostream>
 void RevString(char*);
 int CountEven(int *, int);
-void Maximum(double*, int);
-bool Contains(char*, char);
+double* Maximum(double*, int);
+bool Contains(char*, char, int);
 
 int main()
 {
@@ -17,7 +17,8 @@ int main()
 	char c = 'T', d = 'S';
 	char *p1 = &c;
 	char *p2 = &d;
-	char *p3;	p3 = &d;
+	char *p3;
+	p3 = &d;
 	std::cout << "*p3 = " << *p3 << std::endl; // (1)
 	p3 = p1;
 	std::cout << "*p3 = " << *p3 << std::endl; // (2)
@@ -89,6 +90,43 @@ int main()
 	}
 	std::cout << CountEven(numbers, 310) << "\n \n";
 
+	double numa[10] = { 2, 3, 5, 7, 9, 12, 234, 5, 6, 10 };
+	std::cout << *Maximum(numa, 10) << "\n \n";
+
+	char test = 'e';
+	std::cout << Contains(word, test, 4) << std::endl;
+
+	/*
+	
+		~7~
+		None shall work.
+		ptr_b needs a * in front 
+		
+	
+
+	
+	int * ptr_a, ptr_b, *ptr_c;
+	ptr_a = new int;
+	*ptr_a = 3;
+	ptr_b = ptr_a;
+	std::cout << *ptr_a << " " << *ptr_b << "\n";
+	ptr_b = new int;
+	*ptr_b = 9;
+	std::cout << *ptr_a << " " << *ptr_b << "\n";
+	*ptr_b = *ptr_a;
+	std::cout << *ptr_a << " " << *ptr_b << "\n";
+	delete ptr_a;
+	ptr_a = ptr_b;
+	std::cout << *ptr_a << " " << *&*&*&*&*ptr_b << "\n";
+	ptr_c = &ptr_a;
+	std::cout << *ptr_c << " " << **ptr_c << "\n";
+	delete ptr_a;
+	ptr_a = NULL;
+
+	*/
+	
+	
+	
 	system("pause");
 	return 0;
 }
@@ -122,13 +160,28 @@ int CountEven(int* array, int array_len)
 
 //Returns a pointer to the maximum value of an array of doubles
 //If the array is empty, return nullptr
-void Maximum(double* array, int array_size)
+double* Maximum(double* array, int array_size)
 {
-
+	double* maxNumb = &*array;
+	for (int i = 0; i < array_size; ++i)
+	{
+		if (*(array + i) > *maxNumb)
+		{
+			maxNumb = &*(array + i);
+		}
+	}
+	return maxNumb;
 }
 
 //Returns true if the 1st parameter contains the 2nd parameter, or false otherwise
-bool Contains(char* array, char search_value)
+bool Contains(char* array, char search_value, int size)
 {
+	for (int i = 0; i < size; ++i)
+	{
+		if (*(array + i) == search_value)
+		{
+			return true;
+		}
+	}
 	return false;
 }
