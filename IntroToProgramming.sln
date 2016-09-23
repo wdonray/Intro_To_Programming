@@ -33,7 +33,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class", "Class\Class.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers to Memory", "Pointers to Memory\Pointers to Memory.vcxproj", "{5E8FF39C-0C59-4152-B610-395012667364}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Morning", "Morning\Morning.vcxproj", "{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Morning 9222016", "Morning\Morning.vcxproj", "{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
