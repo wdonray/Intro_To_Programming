@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers to Memory", "Point
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Morning 9222016", "Morning\Morning.vcxproj", "{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Text Files", "Text Files\Text Files.vcxproj", "{1F39C9FE-1885-4605-A388-5658BBD50CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}.Release|x64.Build.0 = Release|x64
 		{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}.Release|x86.ActiveCfg = Release|Win32
 		{A6FA0B5B-89CA-4D13-9C1B-EB5D34A74669}.Release|x86.Build.0 = Release|Win32
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Debug|x64.ActiveCfg = Debug|x64
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Debug|x64.Build.0 = Debug|x64
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Debug|x86.ActiveCfg = Debug|Win32
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Debug|x86.Build.0 = Debug|Win32
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Release|x64.ActiveCfg = Release|x64
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Release|x64.Build.0 = Release|x64
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Release|x86.ActiveCfg = Release|Win32
+		{1F39C9FE-1885-4605-A388-5658BBD50CD9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
