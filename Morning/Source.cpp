@@ -85,34 +85,51 @@
 //	system("pause");
 //	return 0;
 //}
-int morning(int *, int);
+//int morning(int *, int);
+//int main()
+//{
+//	int numbers[5] = { 5,5,3,5,9 };
+//	std::cout << morning(numbers, 5) << std::endl;
+//	system("pause");
+//	return 0;
+//}
+//int morning(int * array, int size)
+//{
+//
+//	int b = 0;
+//	int c = 0;
+//	for (int i = 0; i < size; i++)
+//	{
+//		int a = 0;
+//		for (int x = 0; x < size; x++)
+//		{
+//			if (array[i] == array[x])
+//			{
+//				a++;
+//				if (a > b)
+//				{
+//					c = array[x];
+//					b = a;
+//				}
+//			}
+//		}
+//	}
+//	return c;
+//}
+void swap(int&, int&);
+
 int main()
 {
-	int numbers[5] = { 5,5,3,5,9 };
-	std::cout << morning(numbers, 5) << std::endl;
+	int firstN = 200;
+	int secondN = 300;
+	swap(firstN, secondN);
 	system("pause");
 	return 0;
 }
-int morning(int * array, int size)
-{
 
-	int b = 0;
-	int c = 0;
-	for (int i = 0; i < size; i++)
-	{
-		int a = 0;
-		for (int x = 0; x < size; x++)
-		{
-			if (array[i] == array[x])
-			{
-				a++;
-				if (a > b)
-				{
-					c = array[x];
-					b = a;
-				}
-			}
-		}
-	}
-	return c;
+void swap(int &a, int &b)
+{
+	a = a + b;
+	b = a - b;
+	a = a - b;
 }
