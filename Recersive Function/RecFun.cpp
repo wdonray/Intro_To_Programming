@@ -19,13 +19,29 @@ int power(int x, int n)
 	}
 	else return x * power(x, n - 1);
 }
+void Hanoi(int size, int one, int two, int three)
+{
+	if (size != 0)
+	{
+		Hanoi(size - 1, one, three, two);
+		
+		std::cout << "\nMove disk " << size << " from peg " << one << " to peg " << three << "\n";
 
+		Hanoi(size - 1, two, one, three);
+	}
+}
 int main()
-{	for (int i = 0; i < 20; i++)	{		std::cout << Fibonacci(i) << " ";	}
+{	std::cout << "Problem 1 : ";	for (int i = 0; i < 20; i++)	{		std::cout << Fibonacci(i) << " ";	}
 
 	std::cout << "\n \n";
 
-	std::cout << power(2, 6) << "\n";
+	std::cout << "Problem 2 : " << power(2, 6) << "\n \n";
+
+	int input;
+	std::cout << "   |Tower Of Hanoi| \n \n";
+	std::cout << "Enter number of disks: ";
+	std::cin >> input;
+	Hanoi(input, 1, 2, 3);
 
 	system("pause");
 	return 0;
