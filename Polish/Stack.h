@@ -3,6 +3,7 @@
 class Stack
 {
 public:
+	Stack(int);
 	void pop();
 	char top();
 	void push(char);
@@ -12,4 +13,5 @@ public:
 private:
 	std::string m_data;
 	int m_topindex;
+	int m_totalsize; 
 };

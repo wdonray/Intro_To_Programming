@@ -1,5 +1,9 @@
 #include "Stack.h"
 
+Stack::Stack(int size)
+{
+	m_totalsize = size;
+}
 
 void Stack::pop()
 {
@@ -26,6 +30,11 @@ void Stack::initializeStack(std::string work)
 
 bool Stack::isFullStack()
 {
+	if (m_data.length() >= m_totalsize)
+	{
+		return true;
+	}
+	else
 	return false;
 }
 
