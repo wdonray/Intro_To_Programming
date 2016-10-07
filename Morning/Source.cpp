@@ -116,18 +116,18 @@
 //	}
 //	return c;
 //}
-void swap(int&, int&);
+void swap(char&, char&);
 
 int main()
 {
-	int firstN = 200;
-	int secondN = 300;
+	char firstN = 'a';
+	char secondN = 'c';
 	swap(firstN, secondN);
 	system("pause");
 	return 0;
 }
 
-void swap(int &a, int &b)
+void swap(char &a, char &b)
 {
 	a = a + b;
 	b = a - b;

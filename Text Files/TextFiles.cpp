@@ -3,25 +3,22 @@
 #include <string>
 int main()
 {
-	std::ofstream file;
+	std::ifstream file;
 	file.open("MyLog.txt", std::ios_base::app);
 	std::string test;
-	std::fstream file;
-	//std::getline(std::cin, test);
-	while (!file.eof())
+	std::string work;
+	std::cin >> work; 
+	if (!file.is_open())
 	{
-		getline(file, test);
-		std::cout << test << "\n";
-
+		return 1;
 	}
-	//if (file.is_open())
-	//{
-	//	file << "Hello World" << std::endl;
-	//}
-	//else
-	//{
-	//	std::cout << "Something went wrong." << std::endl;
-	//}
+	do
+	{
+		file >> test;
+		std::cout << test << " ";
+	} while (!file.eof());
+	std::cout << work;
+	std::cout << "\n";
 	file.close();
 	system("pause");
 	return 0;

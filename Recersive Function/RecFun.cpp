@@ -38,7 +38,7 @@ int main()
 	std::cout << "Problem 2 : " << power(2, 6) << "\n \n";
 
 	int input;
-	std::cout << "   |Tower Of Hanoi| \n \n";
+	std::cout << "   |Tower Of Hanoi| \n";
 	std::cout << "Enter number of disks: ";
 	std::cin >> input;
 	Hanoi(input, 1, 2, 3);
