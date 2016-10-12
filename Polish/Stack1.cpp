@@ -3,6 +3,7 @@
 Stack::Stack(int size)
 {
 	m_totalsize = size;
+	m_topindex = -1;
 }
 
 void Stack::pop()
