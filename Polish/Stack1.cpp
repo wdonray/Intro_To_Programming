@@ -8,18 +8,18 @@ Stack::Stack(int size)
 void Stack::pop()
 {
 	m_data[m_topindex] = '\0';
-	m_topindex = m_data.length() - 1;
+	m_topindex--;
 }
 
 char Stack::top()
 {
-	return m_data[m_topindex];
+		return m_data[m_topindex];
 }
 
 void Stack::push(char work)
 {
-	m_data[m_topindex - 1] = work;
-	m_topindex = m_data.length();
+	m_data.append(&work);
+	m_topindex++;
 }
 
 void Stack::initializeStack(std::string work)
@@ -35,7 +35,7 @@ bool Stack::isFullStack()
 		return true;
 	}
 	else
-	return false;
+		return false;
 }
 
 bool Stack::isEmpty()
