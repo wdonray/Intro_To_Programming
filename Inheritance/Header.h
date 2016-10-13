@@ -91,6 +91,7 @@ public:
 		if (work == "work")
 		{
 			std::cout << "Donray: Thanks for typing work \n \n";
+			std::cout << "Type : work please \n \n";
 		}
 		else
 		{
@@ -105,7 +106,16 @@ public:
 	Max() {};
 	void doWork()
 	{
-		std::cout << "Max: LUL \n \n";
+		std::string work;
+		std::getline(std::cin, work);
+		if (work == "work please")
+		{
+			std::cout << "Max: Thanks for typing work \n \n";
+		}
+		else
+		{
+			std::cout << "lul type work please next time ty\n \n";
+		}
 	}
 };
 
@@ -117,5 +127,4 @@ public:
 	{
 		std::cout << "Dylan: aye \n \n";
 	}
-
 };

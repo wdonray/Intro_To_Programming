@@ -10,11 +10,6 @@ void Enemy::Attack()
 
 int main()
 {
-	//Enemy * First = new Orc(500, 100, "Donray");
-	//Enemy * LittleFirst = new Troll(200, 25, "Max");
-	//First->Attack();
-	//LittleFirst->Attack();
-	
 	std::cout << "Incorrect way \n";
 
 	Animal * Tweet = new Bird();

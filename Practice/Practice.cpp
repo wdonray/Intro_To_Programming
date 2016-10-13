@@ -1,16 +1,9 @@
 #include <iostream>
-void Variables();
-
-int main()
-{
-	Variables();
-	system("pause");
-	return 0;
-}
-
+#include <cstdlib>
+#include <time.h>
 void Variables()
 {
-	
+
 	/*
 	1. Find the value of each of the following expressions, or explain why it is not a valid
 	expression.Try this without coding it first.
@@ -56,9 +49,9 @@ void Variables()
 	std::cout << "b ) hightTax" << "\n \n";     //b) The tax rate for incomes over $65000
 	std::cout << "c ) lowTax" << "\n \n";		//c) The tax rate for incomes below $5000
 	std::cout << "d ) steamTotal" << "\n \n"; //d) The total cost of all the games on your Steam library
-	/*
-	3. Select suitable data types to hold the following values:
-	*/
+											  /*
+											  3. Select suitable data types to hold the following values:
+											  */
 	std::cout << "-----------------------------------------" << "\n";
 	std::cout << "			Problem : 3 " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
@@ -86,17 +79,17 @@ void Variables()
 	numa = tmp;
 
 	std::cout << "Numa is now " << numa << "\n \n" << "Numb is now " << numb << "\n \n"; //Then print to console
-	/*
-	5. Consider the following code segment. Note: Do not implement it yet. 
+																						 /*
+																						 5. Consider the following code segment. Note: Do not implement it yet.
 
-	int i = 0;
-	float f = 0;
-	char ch = 'a';
-	std::cin >> i >> ch >> f;
-	std::cout << "i: " << i << "\nch: " << ch << "\nf: " << f << std::endl;
+																						 int i = 0;
+																						 float f = 0;
+																						 char ch = 'a';
+																						 std::cin >> i >> ch >> f;
+																						 std::cout << "i: " << i << "\nch: " << ch << "\nf: " << f << std::endl;
 
-	What will be the output when the input is:
-	*/
+																						 What will be the output when the input is:
+																						 */
 	std::cout << "-----------------------------------------" << "\n";
 	std::cout << "			Problem : 5 " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
@@ -115,12 +108,12 @@ void Variables()
 	int t = 40;
 	int r = 500;
 	std::cout << "The total of all the numbers are : " << p + o + u + t + r << "\n \n";		//Then simply add all 5 together in cout 
-	/*
-	7. Write a program that determines the letter that lies halfway between two letters of the
-	alphabet as input by the user. For example, if the user inputs ‘A’ and ‘Z’, the output should
-	be ‘M’. Do you know how to deal with upper vs. lower case letters? Does it matter if the
-	letters are input in reverse order?
-	*/
+																							/*
+																							7. Write a program that determines the letter that lies halfway between two letters of the
+																							alphabet as input by the user. For example, if the user inputs ‘A’ and ‘Z’, the output should
+																							be ‘M’. Do you know how to deal with upper vs. lower case letters? Does it matter if the
+																							letters are input in reverse order?
+																							*/
 	std::cout << "-----------------------------------------" << "\n";
 	std::cout << "			Problem : 7 " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
@@ -140,3 +133,68 @@ void Variables()
 	std::cout << "			F I N " << "\n";
 	std::cout << "-----------------------------------------" << "\n \n";
 }
+
+float smallnum()
+{
+	float one;
+	float two;
+	std::cout << "Enter value one \n";
+	std::cin >> one;
+	std::cout << "Enter value two \n";
+	std::cin >> two;
+	if (one < two)
+	{
+		std::cout << one;
+		return one;
+	}
+	else if (two < one)
+	{
+		std::cout << two;
+		return two;
+	}
+	return 0;
+}
+
+float Half(float number)
+{
+	float sum = 0;
+	sum = number / 2;
+	return sum;
+}
+
+int CoinToss()
+{
+	srand(time(NULL));
+	int throws;
+	int rNum;
+	std::cout << "How many times do you want to flip the coin? \n";
+	std::cin >> throws;
+	int num = rand();
+	for (int i = 0; i < throws; i++)
+	{
+		rNum = rand() % 2 + 1;
+		switch (rNum)
+		{
+			case 1:
+				std::cout << "Its Heads!\n";
+				break;
+			case 2:
+				std::cout << "Its Tails!\n";
+				break;
+		}
+	}
+	return num;
+}
+int main()
+{
+	//Variables();
+	//smallnum();
+
+	float number = 16.721f;
+	float result = Half(number); //result is 8.3605
+
+	CoinToss();
+	system("pause");
+	return 0;
+}
+
