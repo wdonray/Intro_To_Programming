@@ -32,7 +32,7 @@ int main()
 	Bird b = Bird();
 	Dog d = Dog();
 	Cat c = Cat();
-	Mammal m = Mammal();
+	Mammal ma = Mammal();
 
 	Animal * animalPointer;
 
@@ -45,8 +45,23 @@ int main()
 	animalPointer = &d;
 	animalPointer->speak();
 
-	animalPointer = &m;
+	animalPointer = &ma;
 	animalPointer->speak();
+
+	std::cout << " \nType: work \n";
+
+	Donray don = Donray();
+	Max m = Max();
+	Dylan dy = Dylan();
+
+	Student * sptr;
+	
+	sptr = &don;
+	sptr->doWork();
+	sptr = &m;
+	sptr->doWork();
+	sptr = &dy;
+	sptr->doWork();
 
 	system("pause");
 	return 0;

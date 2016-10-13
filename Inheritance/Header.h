@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include <iostream>
 class Enemy
 {
@@ -71,4 +72,50 @@ public :
 	Dog() {};
 	void speak() { std::cout << "woof \n"; };
 	void bark() { std::cout << "bark \n"; };
+};
+
+class Student
+{
+public: 
+	virtual void doWork() = 0;
+};
+
+class Donray : public Student
+{
+public:
+	Donray() {}; 
+	void doWork() 
+	{
+		std::string work;
+		std::getline(std::cin, work);
+		if (work == "work")
+		{
+			std::cout << "Donray: Thanks for typing work \n \n";
+		}
+		else
+		{
+			std::cout << "lul type work next time ty\n \n";
+		}
+	}
+};
+
+class Max : public Student
+{
+public:
+	Max() {};
+	void doWork()
+	{
+		std::cout << "Max: LUL \n \n";
+	}
+};
+
+class Dylan : public Student
+{
+public:
+	Dylan() {};
+	void doWork()
+	{
+		std::cout << "Dylan: aye \n \n";
+	}
+
 };

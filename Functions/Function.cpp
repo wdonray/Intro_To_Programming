@@ -6,7 +6,7 @@ float smallnum2();
 float Half4(float);
 int CoinToss5();
 int SumTo7(int);
-int Array8(int[], int);
+int twoLargest(int[], int);
 int MinInArray9(int[], int);
 void MultiplyByIndex10(int[], int[], int);
 int Number11(int[], int[], int[], int);
@@ -270,7 +270,7 @@ std::cout << result << std::endl;
 and returns the sum of the values in the array.
 Use this code to test the function :
 */
-int  Array8(int integer_array[], int size)
+int  twoLargest(int integer_array[], int size)
 {
 
 	int sum = 0;

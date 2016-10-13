@@ -114,22 +114,56 @@
 //			}
 //		}
 //	}
-//	return c;
+////	return c;
+////}
+//void swap(char&, char&);
+//
+//int main()
+//{
+//	char firstN = 'a';
+//	char secondN = 'c';
+//	swap(firstN, secondN);
+//	system("pause");
+//	return 0;
 //}
-void swap(char&, char&);
+//
+//void swap(char &a, char &b)
+//{
+//	a = a + b;
+//	b = a - b;
+//	a = a - b;
+//}
 
+
+int  twoLargest(int array[], int size)
+{
+		int sumlarge = array[0];
+		int sum2;
+		if (sumlarge > array[1])
+		{
+			sum2 = array[1];
+		}
+		for (int i = 1; i < size; i++)
+		{
+	
+			if (array[i] > sumlarge)
+			{
+				sum2 = sumlarge;
+				sumlarge = array[i];
+	
+			}
+			else if (array[i] > sum2)
+			{
+				sum2 = array[i];
+			}
+		}
+		return sumlarge + sum2;
+}
 int main()
 {
-	char firstN = 'a';
-	char secondN = 'c';
-	swap(firstN, secondN);
+	int arrays[] = { 7, 11, 22, 22, 10 };
+	int sum = twoLargest(arrays, 5);
+	std::cout << sum << std::endl;
 	system("pause");
 	return 0;
-}
-
-void swap(char &a, char &b)
-{
-	a = a + b;
-	b = a - b;
-	a = a - b;
 }
