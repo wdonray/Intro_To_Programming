@@ -185,15 +185,71 @@ int CoinToss()
 	}
 	return num;
 }
+
+int SumTo(int N)
+{
+	int sum = 0;
+
+	for (int i = 0; i <= N; i++)
+	{
+		sum += i;
+	}
+	return sum;
+}
+
+int SumArray(int interger_array[], int size)
+{
+	int sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum += interger_array[i];
+	}
+	return sum;
+}
+
+int MinInArray(int integer_array[], int size)
+{
+	int sum = 0;
+	int i = 0;
+	sum = integer_array[i];
+	for (int i = 0; i < size; i++)
+	{
+		if (sum > integer_array[i])
+		{
+			sum = integer_array[i];
+		}
+	}
+	return sum;
+}
+
+int MultiplyByIndex(int integer_array[], int output_array[], int size)
+{
+	int sum;
+	for (int i = 0; i < size; i++)
+	{
+		sum = integer_array[i] * i;
+		output_array[i] = sum;
+	}
+	return sum;
+}
+
+int what(int arrayin[], int arrayout[], int arraythree[], int size)
+{
+	int sum;
+	for (int x = 0; x < size; x++)
+	{
+		sum = arrayin[x] + arrayout[x];
+		arraythree[x] = sum;
+	}
+	return sum;
+}
 int main()
 {
-	//Variables();
-	//smallnum();
+	int integer_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
+	int output_array[7] = {};
+	MultiplyByIndex(integer_array, output_array, 7);
+	//output_array should be {0, 15, 14, 12, 52, 95, 48};
 
-	float number = 16.721f;
-	float result = Half(number); //result is 8.3605
-
-	CoinToss();
 	system("pause");
 	return 0;
 }

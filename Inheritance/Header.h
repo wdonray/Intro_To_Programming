@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+//-----------------------------------------------------------------------------
 class Enemy
 {
 	int health;
@@ -36,6 +37,7 @@ class Troll : public Enemy
 public:
 	Troll(int a, int b, std::string c) : Enemy(a, b, c) {}
 };
+//-----------------------------------------------------------------------------
 
 class Animal
 {
@@ -73,6 +75,7 @@ public :
 	void speak() { std::cout << "woof \n"; };
 	void bark() { std::cout << "bark \n"; };
 };
+//-----------------------------------------------------------------------------
 
 class Student
 {
@@ -128,3 +131,56 @@ public:
 		std::cout << "Dylan: aye \n \n";
 	}
 };
+//-----------------------------------------------------------------------------
+class CellularPhone
+{
+public:
+	CellularPhone() { phoneRunning = true; };
+	virtual void Start() = 0;
+	virtual void Update() = 0;
+	void Shutdown();
+	void Run();
+protected:
+	bool phoneRunning;
+};
+
+class appleIhpone : public CellularPhone
+{
+public: 
+	appleIhpone() {};
+	void Start()
+	{
+
+	}
+	void Update() { "This is an Apple Iphone."; };
+};
+class samsungGalaxy : public CellularPhone
+{
+public:
+	samsungGalaxy() {};
+	void Start()
+	{
+
+	}
+	void Update() { "This is an Samsung Galaxy."; };
+};
+class sonyXperia : public CellularPhone
+{
+public:
+	sonyXperia() {};
+	void Start()
+	{
+
+	}
+	void Update() { "This is an Sony Xperia."; };
+};
+
+void CellularPhone::Run()
+{
+	while (phoneRunning)
+	{
+		Update();
+	}
+}
+
+//-----------------------------------------------------------------------------
