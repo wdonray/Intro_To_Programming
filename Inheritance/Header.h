@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <windows.h>
 //-----------------------------------------------------------------------------
 class Enemy
 {
@@ -41,13 +42,13 @@ public:
 
 class Animal
 {
-public: 
+public:
 	virtual void speak() = 0;
 };
 
 class Mammal : public Animal
 {
-public :
+public:
 	Mammal() {};
 	void speak() {};
 	void bark() {};
@@ -62,7 +63,7 @@ public:
 
 class Cat : public Animal
 {
-public: 
+public:
 	Cat() {};
 	void speak() { std::cout << "meow \n"; };
 	void purr() { std::cout << "purr \n"; };
@@ -70,7 +71,7 @@ public:
 
 class Dog : public Animal
 {
-public :
+public:
 	Dog() {};
 	void speak() { std::cout << "woof \n"; };
 	void bark() { std::cout << "bark \n"; };
@@ -79,15 +80,15 @@ public :
 
 class Student
 {
-public: 
+public:
 	virtual void doWork() = 0;
 };
 
 class Donray : public Student
 {
 public:
-	Donray() {}; 
-	void doWork() 
+	Donray() {};
+	void doWork()
 	{
 		std::string work;
 		std::getline(std::cin, work);
@@ -132,47 +133,64 @@ public:
 	}
 };
 //-----------------------------------------------------------------------------
+
 class CellularPhone
 {
 public:
 	CellularPhone() { phoneRunning = true; };
 	virtual void Start() = 0;
 	virtual void Update() = 0;
-	void Shutdown();
+	virtual void Shutdown() = 0;
 	void Run();
+	void Work();
+	void Test();
 protected:
 	bool phoneRunning;
 };
 
 class appleIhpone : public CellularPhone
 {
-public: 
+public:
 	appleIhpone() {};
-	void Start()
-	{
-
+	void Start() { std::cout << "OverPriced garbage\n"; Sleep(500); }
+	void Update() {
+		std::cout << "This is an Apple Iphone.\n";
+		Work();
 	}
-	void Update() { "This is an Apple Iphone."; };
+	void Shutdown() {
+		std::cout << "You are now leaving apple.\n";
+		Test();
+	}
 };
+
 class samsungGalaxy : public CellularPhone
 {
 public:
 	samsungGalaxy() {};
-	void Start()
-	{
-
+	void Start() { std::cout << "Decent OverPriced garbage\n"; Sleep(500); }
+	void Update() {
+		std::cout << "This is an Samsung Galaxy.\n";
+		Work();
 	}
-	void Update() { "This is an Samsung Galaxy."; };
+	void Shutdown() {
+		std::cout << "Come back 2 samsung. \n";
+		Test();
+	}
 };
+
 class sonyXperia : public CellularPhone
 {
 public:
 	sonyXperia() {};
-	void Start()
-	{
-
+	void Start() { std::cout << "I have never heard of this phone\n"; Sleep(500); }
+	void Update() {
+		std::cout << "This is an Sony Xperia.\n";
+		Work();
 	}
-	void Update() { "This is an Sony Xperia."; };
+	void Shutdown() {
+		std::cout << "We also dont know what this phone is, lata. \n";
+		Test();
+	}
 };
 
 void CellularPhone::Run()
@@ -181,6 +199,19 @@ void CellularPhone::Run()
 	{
 		Update();
 	}
+}
+
+void CellularPhone::Work()
+{
+	system("pause");
+	phoneRunning = false;
+	system("cls");
+}
+
+void CellularPhone::Test()
+{
+	Sleep(500); phoneRunning = true;
+	system("cls");
 }
 
 //-----------------------------------------------------------------------------

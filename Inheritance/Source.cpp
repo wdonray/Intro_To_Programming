@@ -3,9 +3,15 @@
 #include <time.h>
 #include <Windows.h>
 #include <string>
+#include<conio.h>
 void Enemy::Attack()
 {
 	std::cout << name << " does " << attack << " damage. \n";
+}
+
+void State()
+{
+	std::cout << "Press any key other than q (Q quits the game) to achieve any random phone.  \n \n";
 }
 
 int main()
@@ -46,9 +52,73 @@ int main()
 	//sptr->doWork();
 	//sptr = &dy;
 	//sptr->doWork();
-	void CellularPhone::Shutdown()
+	srand(time(NULL));
+	appleIhpone I = appleIhpone();
+	samsungGalaxy s = samsungGalaxy();
+	sonyXperia sX = sonyXperia();
+	CellularPhone * cptr;
+	State();
+	std::string chose;
+	int randNum;
+	while (_getch()!=113)
 	{
-		std::cout << "Have a great day.\n";
+		randNum = rand() % 3 + 1;
+		switch (randNum)
+		{
+			case 1:
+			{
+				cptr = &I;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+				State();
+				break;
+			}
+			case 2:
+			{
+				cptr = &s;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+				State();
+				break;
+			}
+			case 3:
+			{
+				cptr = &sX;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+				State();
+				break;
+			}
+		}
+
+		/*	if (chose == "A")
+			{
+				cptr = &I;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+			}
+			if (chose == "B")
+			{
+				cptr = &s;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+			}
+			if (chose == "C")
+			{
+				cptr = &sX;
+				cptr->Start();
+				cptr->Run();
+				cptr->Shutdown();
+			}
+			else
+			{
+				std::cout << "Press A, B, C. \n";
+			}*/
 	}
 
 
