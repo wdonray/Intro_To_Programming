@@ -12,8 +12,8 @@ public:
 	Bucket() {};
 	Bucket(int size) : m_size(size) {};
 	bool Add(T a);
-	const int m_size;
-	T items[m_size];
+	int m_size;
+	T * items[m_size];
 };
 
 template <class T>
