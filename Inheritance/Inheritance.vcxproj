@@ -111,8 +111,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="Source.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
