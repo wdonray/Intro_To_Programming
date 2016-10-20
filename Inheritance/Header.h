@@ -171,16 +171,16 @@ public:
 	void Call()
 	{
 		std::cout << "Would you like to make a call? (Press Y/Yes , N/No) \n";
-		char response;
+		std::string response;
 		std::cin >> response;
 		std::cin.ignore();
-		while (response != 'Y' && response != 'N')
+		while (response != "Y" && response != "N" && response != "Yes" && response != "No")
 		{
 			std::cout << "Try Again Please \n";
 			std::cin >> response;
 			std::cin.ignore();
 		}
-		if (response == 'Y')
+		if (response == "Y" || response == "Yes")
 		{
 			std::cout << "Who would you like to call? \n1. Steve Jobs \n2. Ronald Wayne \n3. Steve Wozniak \n \n";
 			int choice = 0;
@@ -246,7 +246,7 @@ public:
 
 			}
 		}
-		else if (response == 'N')
+		else if (response == "N" || response == "No")
 			Work();
 	}
 
@@ -620,7 +620,7 @@ public:
 
 	void Game()
 	{
-
+		std::cout << "No game yet \n ";
 	}
 
 
