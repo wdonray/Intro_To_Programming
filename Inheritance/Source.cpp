@@ -86,6 +86,7 @@ int main()
 				cptr->Start();
 				cptr->Run();
 				cptr->Call();
+				cptr->Game();
 				cptr->Shutdown();
 				State();
 				break;
@@ -96,6 +97,7 @@ int main()
 				cptr->Start();
 				cptr->Run();
 				cptr->Call();
+				cptr->Game();
 				cptr->Shutdown();
 				State();
 				break;
@@ -106,6 +108,7 @@ int main()
 				cptr->Start();
 				cptr->Run();
 				cptr->Call();
+				cptr->Game();
 				cptr->Shutdown();
 				State();
 				break;
