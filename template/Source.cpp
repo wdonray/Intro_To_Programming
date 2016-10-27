@@ -50,9 +50,7 @@ OUTPUT : The lower of the two values a and b
 template <typename T>
 T Min(T a, T b)
 {
-	T work;
-	(a < b) ? work = a : work = b;
-	return work;
+	return (a < b) ? a : b;
 }
 /*
 2. Max
@@ -63,9 +61,7 @@ OUTPUT: The higher of the two values a and b.
 template <typename T>
 T Max(T a, T b)
 {
-	T work;
-	(a > b) ? work = a : work = b;
-	return work;
+	return (a > b) ? a : b;
 }
 /*
 3. Clamp
@@ -76,9 +72,7 @@ OUTPUT: The value of the val constrained between min and max.
 template <class T>
 T Clamp(T min, T max, T val)
 {
-	T work;
-	(val < min) ? work = min : (val > max) ? work = max : work = val;
-	return work;
+	return (val < min) ? min : (val > max) ? max : val;
 }
 /*
 4. Min (specialised for char)
@@ -90,21 +84,17 @@ OUTPUT: The alphabetically lower of the two values a and b.
 template <class T>
 T Min(char a, char b)
 {
-	T work;
 	if (a <= 90 && a >= 65)
 	{
 		a += 32;
 		if (b <= 90 && b >= 65)
 		{
 			b += 32;
-			(a < b) ? work = a - 32 : work = b - 32;
-			return work;
+			return (a < b) ? a - 32 : b - 32;
 		}
-		(a < b) ? work = a - 32 : work = b;
-		return work;
+		return (a < b) ? a - 32 : b;
 	}
-	(a < b) ? work = a : work = b;
-	return work;
+	return (a < b) ? a : b;
 }
 /*
 5. Max (specialised for char)
@@ -116,21 +106,17 @@ OUTPUT: The alphabetically higher of the two values a and b
 template <class T>
 T Max(char a, char b)
 {
-	T work;
 	if (a <= 90 && a >= 65)
 	{
 		a += 32;
 		if (b <= 90 && b >= 65)
 		{
 			b += 32;
-			(a > b) ? work = a - 32 : work = b - 32;
-			return work;
+			return (a > b) ? a - 32 : b - 32;
 		}
-		(a > b) ? work = a - 32 : work = b;
-		return work;
+		return (a > b) ? a - 32 : b;
 	}
-	(a > b) ? work = a : work = b;
-	return work;
+	return (a > b) ? a : b;
 }
 /*
 1. Constructor
@@ -146,7 +132,13 @@ template <typename T>
 class Store
 {
 public:
-	Store<T>(int capacity) { m_data = new T[capacity]; memset(m_data, 0, 0); m_capacity = capacity; m_size = 0; }
+	Store<T>(int capacity)
+	{
+		m_data = new T[capacity];
+		memset(m_data, 0, 1);
+		m_capacity = capacity;
+		m_size = 0;
+	}
 	~Store<T>()
 	{
 		delete(m_data)
@@ -171,7 +163,7 @@ public:
 	{
 		for (int i = 0; i < m_capacity; i++)
 		{
-			std::cout << m_data[i] << ",";
+			std::cout << m_data[i] << "  ";
 		}
 	}
 	T Operator(int index)
