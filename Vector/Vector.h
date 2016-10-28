@@ -1,81 +1,80 @@
 #pragma once
 #include <math.h>
-//template <class T>
+template <class T>
 class Vector2D
 {
 public:
 	Vector2D() {};
-	Vector2D(float xx, float yy) : x(xx), y(yy) {}
-	Vector2D add(const Vector2D &A)
+	Vector2D<T>(T xx, T yy) : x(xx), y(yy) {}
+	bool operator == (const Vector2D<T> &A)
 	{
-		Vector2D tmp = Vector2D(x + A.x, y + A.y);
-		return tmp;
+		return x == A.x && y == A.y;
 	}
-	Vector2D Subtract(const Vector2D &A)
+	Vector2D<T> operator +(const Vector2D<T> &A)
 	{
-		Vector2D tmp = Vector2D(x - A.x, y - A.y);
-		return tmp;
+		return Vector2D(x + A.x, y + A.y);
 	}
-	Vector2D ScalarMult(float Mult)
+	Vector2D<T> operator -(const Vector2D<T> &A)
 	{
-		Vector2D tmp = Vector2D(x * Mult, y * Mult);
-		return tmp;
+		return Vector2D(x - A.x, y - A.y);
 	}
-	float Magnitude()
+	Vector2D<T> operator *(T Mult)
 	{
-		return sqrt((x*x) +(y*y));
+		return Vector2D(x * Mult, y * Mult);
 	}
-	Vector2D Normalize()
+	T Magnitude()
 	{
-		Vector2D tmp = Vector2D(x / Magnitude(), y / Magnitude());
-		return tmp;
+		return sqrt((x*x) + (y*y));
 	}
-	float DotProduct(const Vector2D &A)
+	Vector2D<T> Normalize()
+	{
+		return Vector2D(x / Magnitude(), y / Magnitude());
+	}
+	T DotProduct(const Vector2D<T> &A)
 	{
 		return (x * A.x) + (y * A.y);
 	}
 private:
-	float x, y;
+	T x, y;
 };
-
+template <class T>
 class Vector3D
 {
 public:
 	Vector3D() {};
-	Vector3D(float xx, float yy, float zz) : x(xx), y(yy), z(zz) {}
-	Vector3D add(const Vector3D &A)
+	Vector3D<T>(T xx, T yy, T zz) : x(xx), y(yy), z(zz) {}
+	bool operator == (const Vector3D<T> &A)
 	{
-		Vector3D tmp = Vector3D(x + A.x, y + A.y, z + A.z);
-		return tmp;
+		return x == A.x && y == A.y && z == A.z;
 	}
-	Vector3D Subtract(const Vector3D &A)
+	Vector3D<T> operator +(const Vector3D<T> &A)
 	{
-		Vector3D tmp = Vector3D(x - A.x, y - A.y, z - A.z);
-		return tmp;
+		return Vector3D(x + A.x, y + A.y, z + A.z);
 	}
-	Vector3D ScalarMult(float Mult)
+	Vector3D<T> operator -(const Vector3D<T> &A)
 	{
-		Vector3D tmp = Vector3D(x * Mult, y * Mult, z *= Mult);
-		return tmp;
+		return Vector3D(x - A.x, y - A.y, z - A.z);
 	}
-	float Magnitude()
+	Vector2D<T> operator *(T Mult)
+	{
+		return Vector2D(x * Mult, y * Mult, z *Mult);
+	}
+	T Magnitude()
 	{
 		return sqrt((x*x) + (y*y) + (z*z));
 	}
-	Vector3D Normalize()
+	Vector3D<T> Normalize()
 	{
-		Vector3D tmp = Vector3D(x / Magnitude(), y / Magnitude(), z / Magnitude());
-		return tmp;
+		return Vector3D(x / Magnitude(), y / Magnitude(), z / Magnitude());
 	}
-	float DotProduct(const Vector3D &A)
+	T DotProduct(const Vector3D<T> &A)
 	{
 		return (x * A.x) + (y * A.y) + (z * A.z);
 	}
-	Vector3D CrossProduct(const const Vector3D &A)
+	Vector3D<T> CrossProduct(const const Vector3D<T> &A)
 	{
-		Vector3D tmp = Vector3D(y*A.z - z*A.y, x*A.z - z*A.x, z*A.y - z*A.x);
-		return tmp;
+		return Vector3D(y*A.z - z*A.y, x*A.z - z*A.x, z*A.y - z*A.x);
 	}
 private:
-	float x, y, z;
+	T x, y, z;
 };
