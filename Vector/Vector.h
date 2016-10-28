@@ -23,7 +23,7 @@ public:
 	}
 	float Magnitude()
 	{
-		return sqrt(x*x + y*y);
+		return sqrt((x*x) +(y*y));
 	}
 	Vector2D Normalize()
 	{
@@ -32,7 +32,7 @@ public:
 	}
 	float DotProduct(const Vector2D &A)
 	{
-		return x * A.x + y * A.y;
+		return (x * A.x) + (y * A.y);
 	}
 private:
 	float x, y;
