@@ -61,3 +61,16 @@ protected:
 	nodeType<Type> * first;
 	nodeType<Type> * last;
 };
+template<class Type>
+class LinkedListInterior
+{
+	nodeType<Type> *current;
+	LinkedListInterior() {};
+	LinkedListInterior(nodeType<Type>) {};
+
+	nodeType<Type> Operator *()
+	{
+
+	}
+
+};
