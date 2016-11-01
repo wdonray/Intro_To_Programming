@@ -27,6 +27,9 @@ int main()
 	A->Add(1);
 	A->Add(3);
 	A->Add(2);
+	const int i = A->length();
+	A->front();
+	std::cout << i << std::endl;
 	system("pause");
 	return 0;
 }

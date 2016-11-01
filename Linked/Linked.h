@@ -1,5 +1,7 @@
 #pragma once
 template<class Type>
+class LinkedListInterator;
+template<class Type>
 struct nodeType
 {
 public:
@@ -41,20 +43,21 @@ public:
 	}
 	const Type front()
 	{
-
+		return last->info;
 	}
 	const int length()
 	{
-
+		LinkedListInterator<Type> * tmp = new LinkedListInterator<Type>(*first);
+		int i = 0;
+		while (tmp != NULL)
+		{
+			tmp++;
+			i++;
+		}
+		return i;
 	}
 	void print()
 	{
-		nodeType<Type> * tmp = new nodeType<Type>;
-		int c = 0;
-		while (tmp != NULL)
-		{
-
-		}
 	}
 protected:
 	int count;
@@ -62,15 +65,28 @@ protected:
 	nodeType<Type> * last;
 };
 template<class Type>
-class LinkedListInterior
+class LinkedListInterator 
 {
+private:
 	nodeType<Type> *current;
-	LinkedListInterior() {};
-	LinkedListInterior(nodeType<Type>) {};
-
-	nodeType<Type> Operator *()
+public:
+	LinkedListInterator() {};
+	LinkedListInterator(nodeType<Type> a): current(&a) {};
+	Type operator *()
 	{
 
+	}
+	LinkedListInterator<Type> operator++ ()
+	{
+		return LinkedListInterator current = current->link;
+	}
+	bool operator ==(const LinkedListInterator<Type>& a)
+	{
+		return (current->info == a->current->info) ? true : false;
+	}
+	bool operator !=(const LinkedListInterator<Type>&)
+	{
+		return (current->info != a->current->info) ? true : false;
 	}
 
 };
