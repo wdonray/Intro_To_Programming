@@ -1,6 +1,7 @@
 #pragma once
+#include <cassert>
 template<class Type>
-class LinkedListInterator;
+class linkedListInterator;
 template<class Type>
 struct nodeType
 {
@@ -17,7 +18,11 @@ public:
 		last = new nodeType<Type>;
 		count = 0;
 	};
-	bool Add(const Type& node)
+	void initializeList()
+	{
+
+	}
+	void insertLast(const Type& node)
 	{
 		nodeType<Type> * newNode;
 		newNode = new nodeType<Type>;
@@ -39,22 +44,48 @@ public:
 			last->link = nullptr;
 			count++;
 		}
-		return true;
 	}
-	const Type front()
+	void insertFirst(const Type& node)
 	{
+		nodeType<Type> * newNode;
+		newNode = new nodeType<Type>;
+		if (count == 0)
+		{
+			first->info = node;
+			first->link = nullptr;
+			last->info = node;
+			last->link = nullptr;
+			count++;
+		}
+		else
+		{
+			newNode->link = first->link;
+			first = newNode;
+			first->info = node;
+			count++;
+		}
+	}
+	Type front()const
+	{
+		assert(count != 0);
 		return last->info;
+	}
+	Type back()const
+	{
+		assert(count != 0);
+		return first->info;
+	}
+	linkedListInterator<Type> begin()
+	{
+		return linkedListInterator<Type>(first);
+	}
+	linkedListInterator<Type> end()
+	{
+		return linkedListInterator<Type>(last);
 	}
 	const int length()
 	{
-		LinkedListInterator<Type> * tmp = new LinkedListInterator<Type>(*first);
-		int i = 0;
-		while (tmp != NULL)
-		{
-			tmp++;
-			i++;
-		}
-		return i;
+		return count;
 	}
 	void print()
 	{
@@ -65,28 +96,28 @@ protected:
 	nodeType<Type> * last;
 };
 template<class Type>
-class LinkedListInterator 
+class linkedListInterator
 {
 private:
 	nodeType<Type> *current;
 public:
-	LinkedListInterator() {};
-	LinkedListInterator(nodeType<Type> a): current(&a) {};
+	linkedListInterator() {};
+	linkedListInterator(nodeType<Type> *node) : current(node) {};
 	Type operator *()
 	{
-
+		return current->info;
 	}
-	LinkedListInterator<Type> operator++ ()
+	linkedListInterator<Type> operator++ ()
 	{
-		return LinkedListInterator current = current->link;
+		current = current->link;
+		return *this;
 	}
-	bool operator ==(const LinkedListInterator<Type>& a)
+	bool operator ==(const linkedListInterator<Type>& a)
 	{
-		return (current->info == a->current->info) ? true : false;
+		return (current == a->current) ? true : false;
 	}
-	bool operator !=(const LinkedListInterator<Type>&)
+	bool operator !=(const linkedListInterator<Type>& a)
 	{
-		return (current->info != a->current->info) ? true : false;
+		return (current != a->current) ? true : false;
 	}
-
 };

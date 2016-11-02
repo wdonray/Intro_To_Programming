@@ -24,12 +24,12 @@ int main()
 	//head = &c;
 	//List(head);
 	LinkedList<int> * A = new LinkedList<int>();
-	A->Add(1);
-	A->Add(3);
-	A->Add(2);
-	const int i = A->length();
+	A->insertLast(1);
+	A->insertLast(3);
+	A->insertLast(2);
+	linkedListInterator<int> tmp = linkedListInterator<int>(A->begin());
+	++tmp;
 	A->front();
-	std::cout << i << std::endl;
 	system("pause");
 	return 0;
 }
