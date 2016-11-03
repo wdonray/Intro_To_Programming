@@ -20,7 +20,53 @@ public:
 	};
 	void initializeList()
 	{
+		first = new nodeType<Type>;
+		last = new nodeType<Type>;
+		count = 0;
+	}
+	bool isEmptyList() const
+	{
+		return (first == nullptr) ? true : false;
+	}
+	void print() const
+	{
+		nodeType<Type> *current;
+		current = first;
+		while (current != NULL)
+		{
+			std::cout << current->info << " , ";
+			current = current->link;
+		}
+	}
+	void destroyList()
+	{
 
+	}
+	bool search(const Type& nodeInfo)
+	{
+		linkedListInterator<Type> tmp = linkedListInterator<Type>(begin());
+		while (*tmp != NULL)
+		{
+			if (*tmp == nodeInfo)
+			{
+				return true;
+			}
+			++tmp;
+		}
+		return false;
+	}
+	void deleteNode(const Type& nodeInfo)
+	{
+		linkedListInterator<Type> tmp = linkedListInterator<Type>(begin());
+		while (*tmp != NULL)
+		{
+			if (*tmp == nodeInfo)
+			{
+			
+			}
+		--tmp;
+		}
+		return false;
 	}
 	void insertLast(const Type& node)
 	{
@@ -59,7 +105,7 @@ public:
 		}
 		else
 		{
-			newNode->link = first->link;
+			newNode->link = first;
 			first = newNode;
 			first->info = node;
 			count++;
@@ -87,9 +133,6 @@ public:
 	{
 		return count;
 	}
-	void print()
-	{
-	}
 protected:
 	int count;
 	nodeType<Type> * first;
@@ -105,6 +148,8 @@ public:
 	linkedListInterator(nodeType<Type> *node) : current(node) {};
 	Type operator *()
 	{
+		if (current == nullptr)
+			return NULL;
 		return current->info;
 	}
 	linkedListInterator<Type> operator++ ()

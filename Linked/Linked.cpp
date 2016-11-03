@@ -27,9 +27,12 @@ int main()
 	A->insertLast(1);
 	A->insertLast(3);
 	A->insertLast(2);
+	A->insertFirst(54);
+	A->print();
 	linkedListInterator<int> tmp = linkedListInterator<int>(A->begin());
 	++tmp;
 	A->front();
+	A->search(4);
 	system("pause");
 	return 0;
 }
