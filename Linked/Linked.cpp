@@ -24,10 +24,12 @@ int main()
 	//head = &c;
 	//List(head);
 	linkedListType<int> * A = new linkedListType<int>();
+	linkedListType<int> * B = new linkedListType<int>();
 	A->insertLast(1);
 	A->insertLast(3);
 	A->insertLast(2);
 	A->insertFirst(54);
+	*B = *A;
 	A->print();
 	linkedListIterator<int> tmp = linkedListIterator<int>(A->begin());
 	++tmp;

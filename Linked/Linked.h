@@ -30,7 +30,27 @@ public:
 	}
 	const linkedListType<Type>& operator= (const linkedListType<Type>& otherList)
 	{
-		return otherList.first;
+		linkedListType<Type> tmp = linkedListType<Type>();
+		tmp = otherList.first;
+		for (int i = 0; i < otherList.count; i++)
+		{
+			if (i == 0)
+			{
+				first->info = node;
+				first->link = nullptr;
+				last->info = node;
+				last->link = nullptr;
+			}
+			else
+			{
+				last->link = newNode;
+				last = newNode;
+				if (count == 1)
+					first->link = newNode;
+				last->info = node;
+				last->link = nullptr;
+			}
+		}
 	}
 	void print() const
 	{
@@ -107,11 +127,10 @@ public:
 			count++;
 		}
 	}
-	linkedListType(const linkedListType<Type> otherList)
-	{
-		copyList();
-	}
-
+	//linkedListType(const linkedListType<Type> otherList)
+	//{
+	//	copyList();
+	//}
 	void insertFirst(const Type& node)
 	{
 		nodeType<Type> * newNode;
