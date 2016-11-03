@@ -23,16 +23,21 @@ int main()
 	//a.link = NULL;
 	//head = &c;
 	//List(head);
-	LinkedList<int> * A = new LinkedList<int>();
+	linkedListType<int> * A = new linkedListType<int>();
 	A->insertLast(1);
 	A->insertLast(3);
 	A->insertLast(2);
 	A->insertFirst(54);
 	A->print();
-	linkedListInterator<int> tmp = linkedListInterator<int>(A->begin());
+	linkedListIterator<int> tmp = linkedListIterator<int>(A->begin());
 	++tmp;
 	A->front();
-	A->search(4);
+	A->destroyList();
+	bool test = A->search(53);
+	if (test == true)
+		std::cout << "\nTrue \n\n";
+	else
+		std::cout << "\nFalse \n\n";
 	system("pause");
 	return 0;
 }
