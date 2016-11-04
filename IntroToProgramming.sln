@@ -53,6 +53,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vector", "Vector\Vector.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Linked", "Linked\Linked.vcxproj", "{CAACACF1-131C-4E91-926E-654C7D5B1C5F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math Library", "Math Library\Math Library.vcxproj", "{1ACAF505-E73D-499B-BB14-D6043C2256B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -261,6 +263,14 @@ Global
 		{CAACACF1-131C-4E91-926E-654C7D5B1C5F}.Release|x64.Build.0 = Release|x64
 		{CAACACF1-131C-4E91-926E-654C7D5B1C5F}.Release|x86.ActiveCfg = Release|Win32
 		{CAACACF1-131C-4E91-926E-654C7D5B1C5F}.Release|x86.Build.0 = Release|Win32
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Debug|x64.ActiveCfg = Debug|x64
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Debug|x64.Build.0 = Debug|x64
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Debug|x86.ActiveCfg = Debug|Win32
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Debug|x86.Build.0 = Debug|Win32
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Release|x64.ActiveCfg = Release|x64
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Release|x64.Build.0 = Release|x64
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Release|x86.ActiveCfg = Release|Win32
+		{1ACAF505-E73D-499B-BB14-D6043C2256B5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -55,9 +55,9 @@ public:
 	{
 		return Vector3D(x - A.x, y - A.y, z - A.z);
 	}
-	Vector2D<T> operator *(T Mult)
+	Vector3D<T> operator *(T Mult)
 	{
-		return Vector2D(x * Mult, y * Mult, z *Mult);
+		return Vector3D(x * Mult, y * Mult, z *Mult);
 	}
 	T Magnitude()
 	{

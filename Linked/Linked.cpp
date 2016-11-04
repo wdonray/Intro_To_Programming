@@ -30,11 +30,13 @@ int main()
 	A->insertLast(2);
 	A->insertFirst(54);
 	*B = *A;
-	A->print();
+	//A->print();
 	linkedListIterator<int> tmp = linkedListIterator<int>(A->begin());
 	++tmp;
 	A->front();
-	A->destroyList();
+	//A->destroyList();
+	A->deleteNode(3);
+	A->print();
 	bool test = A->search(53);
 	if (test == true)
 		std::cout << "\nTrue \n\n";

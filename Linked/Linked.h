@@ -28,29 +28,11 @@ public:
 	{
 		return (first == nullptr) ? true : false;
 	}
+	//
 	const linkedListType<Type>& operator= (const linkedListType<Type>& otherList)
 	{
-		linkedListType<Type> tmp = linkedListType<Type>();
-		tmp = otherList.first;
-		for (int i = 0; i < otherList.count; i++)
-		{
-			if (i == 0)
-			{
-				first->info = node;
-				first->link = nullptr;
-				last->info = node;
-				last->link = nullptr;
-			}
-			else
-			{
-				last->link = newNode;
-				last = newNode;
-				if (count == 1)
-					first->link = newNode;
-				last->info = node;
-				last->link = nullptr;
-			}
-		}
+		copyList(otherList);
+		return *this;
 	}
 	void print() const
 	{
@@ -61,6 +43,20 @@ public:
 			std::cout << current->info << std::endl;
 			current = current->link;
 		}
+	}
+
+	bool search(const Type& nodeInfo)
+	{
+		linkedListIterator<Type> tmp = linkedListIterator<Type>(begin());
+		while (*tmp != NULL)
+		{
+			if (*tmp == nodeInfo)
+			{
+				return true;
+			}
+			++tmp;
+		}
+		return false;
 	}
 	void destroyList()
 	{
@@ -75,30 +71,32 @@ public:
 		last = NULL;
 		count = 0;
 	}
-	bool search(const Type& nodeInfo)
-	{
-		linkedListIterator<Type> tmp = linkedListIterator<Type>(begin());
-		while (*tmp != NULL)
-		{
-			if (*tmp == nodeInfo)
-			{
-				return true;
-			}
-			++tmp;
-		}
-		return false;
-	}
 	void deleteNode(const Type& nodeInfo)
 	{
-		/*	linkedListInterator<Type> tmp = linkedListInterator<Type>(begin());
-			while (*tmp != NULL)
+		nodeType<Type>* node = first;
+		if (node->info == nodeInfo)
+		{
+			nodeType<Type> *tmp = node;
+			node = node->link;
+			delete tmp;
+			count--;
+		}
+		else
+		{
+			while (node->link != NULL)
 			{
-				if (*tmp == nodeInfo)
+				if (node->link->info == nodeInfo)
 				{
-					first =
+					nodeType<Type>* tmp = node->link;
+					node->link = node->link->link;
+					delete tmp;
+					count--;
+					break;
 				}
-				--tmp;
-			}*/
+				node = node->link;
+			}
+		}
+
 	}
 	~linkedListType<Type>()
 	{
@@ -127,10 +125,10 @@ public:
 			count++;
 		}
 	}
-	//linkedListType(const linkedListType<Type> otherList)
-	//{
-	//	copyList();
-	//}
+	linkedListType<Type>(const linkedListType<Type> & otherList)
+	{
+		copyList(otherList);
+	}
 	void insertFirst(const Type& node)
 	{
 		nodeType<Type> * newNode;
@@ -173,14 +171,18 @@ public:
 	{
 		return count;
 	}
+
 protected:
 	int count;
 	nodeType<Type> * first;
 	nodeType<Type> * last;
 private:
+	//
 	void copyList(const linkedListType<Type>& otherList)
 	{
 		first = otherList.first;
+		last = otherList.last;
+		count = otherList.count;
 	}
 };
 template<class Type>
