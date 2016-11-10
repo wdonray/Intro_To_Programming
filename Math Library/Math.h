@@ -10,15 +10,18 @@ public:
 	}
 	Vector2 operator +(const Vector2 &A)
 	{
-		return Vector2(x + A.x, y + A.y);
+		Vector2 tmp = Vector2(x + A.x, y + A.y);
+		return tmp;
 	}
 	Vector2 operator -(const Vector2 &A)
 	{
-		return Vector2(x - A.x, y - A.y);
+		Vector2 tmp = Vector2(x - A.x, y - A.y);
+		return tmp;
 	}
 	Vector2 operator *(float Mult)
 	{
-		return Vector2(x * Mult, y * Mult);
+		Vector2 tmp = Vector2(x * Mult, y * Mult);
+		return tmp;
 	}
 	float Magnitude()
 	{
@@ -26,7 +29,8 @@ public:
 	}
 	Vector2 Normalize()
 	{
-		return Vector2(x / Magnitude(), y / Magnitude());
+		Vector2 tmp = Vector2(x / Magnitude(), y / Magnitude());
+		return tmp;
 	}
 	float DotProduct(const Vector2 &A)
 	{
@@ -51,15 +55,18 @@ public:
 	}
 	Vector3 operator +(const Vector3 &A)
 	{
-		return Vector3(x + A.x, y + A.y, z + A.z);
+		Vector3 tmp = Vector3(x + A.x, y + A.y, z + A.z);
+		return tmp;
 	}
 	Vector3 operator -(const Vector3 &A)
 	{
-		return Vector3(x - A.x, y - A.y, z - A.z);
+		Vector3 tmp = Vector3(x - A.x, y - A.y, z - A.z);
+		return tmp;
 	}
 	Vector3 operator *(float Mult)
 	{
-		return Vector3(x * Mult, y * Mult, z *Mult);
+		Vector3 tmp = Vector3(x * Mult, y * Mult, z *Mult);
+		return tmp;
 	}
 	float Magnitude()
 	{
@@ -67,7 +74,8 @@ public:
 	}
 	Vector3 Normalize()
 	{
-		return Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+		Vector3 tmp = Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+		return tmp;
 	}
 	float DotProduct(const Vector3 &A)
 	{
@@ -75,7 +83,8 @@ public:
 	}
 	Vector3 CrossProduct(const const Vector3 &A)
 	{
-		return Vector3(y*A.z - z*A.y, x*A.z - z*A.x, z*A.y - z*A.x);
+		Vector3 tmp = Vector3(y*A.z - z*A.y, x*A.z - z*A.x, z*A.y - z*A.x);
+		return tmp;
 	}
 	void print()
 	{
@@ -102,15 +111,18 @@ public:
 	}
 	Vector4 operator +(const Vector4 &A)
 	{
-		return Vector4(x + A.x, y + A.y, z + A.z, w + A.w);
+		Vector4 tmp = Vector4(x + A.x, y + A.y, z + A.z, w + A.w);
+		return tmp;
 	}
 	Vector4 operator -(const Vector4 &A)
 	{
-		return Vector4(x - A.x, y - A.y, z - A.z, w - A.w);
+		Vector4 tmp = Vector4(x - A.x, y - A.y, z - A.z, w - A.w);
+		return tmp;
 	}
 	Vector4 operator *(float Mult)
 	{
-		return Vector4(x * Mult, y * Mult, z *Mult, w *Mult);
+		Vector4 tmp = Vector4(x * Mult, y * Mult, z *Mult, w *Mult);
+		return tmp;
 	}
 	float Magnitude()
 	{
@@ -118,7 +130,8 @@ public:
 	}
 	Vector4 Normalize()
 	{
-		return Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w / Magnitude());
+		Vector4 tmp = Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w / Magnitude());
+		return tmp;
 	}
 	float DotProduct(const Vector4 &A)
 	{
@@ -166,14 +179,16 @@ public:
 	}
 	Matrix2 operator * (const Matrix2 &a)
 	{
-		return Matrix2(matrix[0][0] * a.matrix[0][0] + matrix[0][1] * a.matrix[1][0],
+		Matrix2 tmp = Matrix2(matrix[0][0] * a.matrix[0][0] + matrix[0][1] * a.matrix[1][0],
 			matrix[0][0] * a.matrix[0][1] + matrix[0][1] * a.matrix[1][1],
 			matrix[1][0] * a.matrix[0][0] + matrix[1][1] * a.matrix[1][0],
 			matrix[1][0] * a.matrix[0][1] + matrix[1][1] * a.matrix[1][1]);
+		return tmp;
 	}
 	Vector2 operator * (const Vector2 &a)
 	{
-		return Vector2(a.x*matrix[0][0] + a.y*matrix[0][1], a.x*matrix[1][0] + a.y*matrix[1][1]);
+		Vector2 tmp = Vector2(a.x*matrix[0][0] + a.y*matrix[0][1], a.x*matrix[1][0] + a.y*matrix[1][1]);
+		return tmp;
 	}
 private:
 	float matrix[2][2];
@@ -223,14 +238,34 @@ public:
 		float p7 = (matrix3[6] * a.matrix3[0]) + (matrix3[0] * a.matrix3[3]) + (matrix3[8] * a.matrix3[6]);
 		float p8 = (matrix3[6] * a.matrix3[1]) + (matrix3[1] * a.matrix3[4]) + (matrix3[8] * a.matrix3[7]);
 		float p9 = (matrix3[6] * a.matrix3[2]) + (matrix3[2] * a.matrix3[5]) + (matrix3[8] * a.matrix3[8]);
-		return Matrix3(p1, p2, p3, p4, p5, p6, p7, p8, p9);
+		Matrix3 tmp = Matrix3(p1, p2, p3, p4, p5, p6, p7, p8, p9);
+		return tmp;
 	}
 	Vector3 operator * (const Vector3 &a)
 	{
 		float x = (matrix3[0] * a.x) + (matrix3[1] * a.y) + (matrix3[2] * a.z);
 		float y = (matrix3[3] * a.x) + (matrix3[4] * a.y) + (matrix3[5] * a.z);
 		float z = (matrix3[6] * a.x) + (matrix3[7] * a.y) + (matrix3[8] * a.z);
-		return Vector3(x, y, z);
+		Vector3 tmp = Vector3(x, y, z);
+		return tmp;
+	}
+	Matrix3 setRotateX(float a)
+	{
+		Matrix3 RotateX = Matrix3(1, 0, 0, 0, cos(a), -sin(a), 0, sin(a), cos(a));
+		*this = *this*RotateX;
+		return *this;
+	}
+	Matrix3 setRotateY(float a)
+	{
+		Matrix3 RotateY = Matrix3(cos(a), 0, sin(a), 0, 1, 0, -sin(a), 0, cos(a));
+		*this = *this*RotateY;
+		return *this;
+	}
+	Matrix3 setRotateZ(float a)
+	{
+		Matrix3 RotateZ = Matrix3(cos(a), -sin(a), 0, sin(a), cos(a), 0, 0, 0, 1);
+		*this = *this*RotateZ;
+		return *this;
 	}
 private:
 	float matrix3[9];
@@ -279,7 +314,25 @@ public:
 		}
 		std::cout << std::endl;
 	}
-	Matrix4 operator * (const Matrix4 &a)
+	Matrix4 setRotateX(float a)
+	{
+		Matrix4 RotateX = Matrix4(1, 0, 0, 0, 0, cos(a), -sin(a), 0, 0, sin(a), cos(a), 0, 0, 0, 0, 1);
+		*this = *this*RotateX;
+		return *this;
+	}
+	Matrix4 setRotateY(float a)
+	{
+		Matrix4 RotateY = Matrix4(cos(a), 0, sin(a), 0, 0, 1, 0, 0, -sin(a), 0, cos(a), 0, 0, 0, 0, 1);
+		*this = *this*RotateY;
+		return *this;
+	}
+	Matrix4 setRotateZ(float a)
+	{
+		Matrix4 RotateZ = Matrix4(cos(a), -sin(a), 0, 0, sin(a), cos(a), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		*this = *this*RotateZ;
+		return *this;
+	}
+	Matrix4 operator * (const Matrix4 &a)const
 	{
 		Matrix4 tmp = Matrix4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		for (int i = 0; i < 64; i++)
@@ -288,7 +341,7 @@ public:
 		}
 		return tmp;
 	}
-	Vector4 operator * (const Vector4 &a)
+	Vector4 operator * (const Vector4 &a)const
 	{
 		Vector4 tmp = Vector4(0, 0, 0, 0);
 		for (int i = 0; i < 16; i++)
@@ -301,6 +354,7 @@ public:
 		tmp.w = tmp.VA[3];
 		return tmp;
 	}
+
 private:
 	float matrix[4][4];
 };
