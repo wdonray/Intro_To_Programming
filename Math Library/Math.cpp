@@ -24,6 +24,14 @@ int main()
 	test.print();
 	std::cout << "2D Matrix/Vector (1, 2, 3, 4) * (1 , 2): ";
 	test2.print();
+	Matrix4 q = Matrix4(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+	Matrix4 o = Matrix4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	Vector4 l = Vector4(1, 2, 3, 4);
+	Matrix4 mult = (q*o);
+	Vector4 mult2 = (o*l);
+	mult.print();
+	mult2.print();
+
 	system("pause");
 	return 0;
 }
