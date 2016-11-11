@@ -251,19 +251,34 @@ public:
 	}
 	Matrix3 setRotateX(float a)
 	{
-		Matrix3 RotateX = Matrix3(1, 0, 0, 0, cos(a), -sin(a), 0, sin(a), cos(a));
+		Matrix3 RotateX = Matrix3
+		(
+			1, 0, 0,
+			0, cos(a), -sin(a),
+			0, sin(a), cos(a)
+		);
 		*this = *this*RotateX;
 		return *this;
 	}
 	Matrix3 setRotateY(float a)
 	{
-		Matrix3 RotateY = Matrix3(cos(a), 0, sin(a), 0, 1, 0, -sin(a), 0, cos(a));
+		Matrix3 RotateY = Matrix3
+		(
+			cos(a), 0, sin(a), 
+			0, 1, 0, 
+			-sin(a), 0, cos(a)
+		);
 		*this = *this*RotateY;
 		return *this;
 	}
 	Matrix3 setRotateZ(float a)
 	{
-		Matrix3 RotateZ = Matrix3(cos(a), -sin(a), 0, sin(a), cos(a), 0, 0, 0, 1);
+		Matrix3 RotateZ = Matrix3
+		(
+			cos(a), -sin(a), 0, 
+			sin(a), cos(a), 0, 
+			0, 0, 1
+		);
 		*this = *this*RotateZ;
 		return *this;
 	}
@@ -316,19 +331,37 @@ public:
 	}
 	Matrix4 setRotateX(float a)
 	{
-		Matrix4 RotateX = Matrix4(1, 0, 0, 0, 0, cos(a), -sin(a), 0, 0, sin(a), cos(a), 0, 0, 0, 0, 1);
+		Matrix4 RotateX = Matrix4
+		(
+			1, 0, 0, 0, 
+			0, cos(a), -sin(a), 0, 
+			0, sin(a), cos(a), 0, 
+			0, 0, 0, 1
+		);
 		*this = *this*RotateX;
 		return *this;
 	}
 	Matrix4 setRotateY(float a)
 	{
-		Matrix4 RotateY = Matrix4(cos(a), 0, sin(a), 0, 0, 1, 0, 0, -sin(a), 0, cos(a), 0, 0, 0, 0, 1);
+		Matrix4 RotateY = Matrix4
+		(
+			cos(a), 0, sin(a), 0, 
+			0, 1, 0, 0, 
+			-sin(a), 0, cos(a), 0, 
+			0, 0, 0, 1
+		);
 		*this = *this*RotateY;
 		return *this;
 	}
 	Matrix4 setRotateZ(float a)
 	{
-		Matrix4 RotateZ = Matrix4(cos(a), -sin(a), 0, 0, sin(a), cos(a), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		Matrix4 RotateZ = Matrix4
+		(
+			cos(a), -sin(a), 0, 0, 
+			sin(a), cos(a), 0, 0, 
+			0, 0, 1, 0, 
+			0, 0, 0, 1
+		);
 		*this = *this*RotateZ;
 		return *this;
 	}
