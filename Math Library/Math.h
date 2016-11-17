@@ -259,16 +259,16 @@ public:
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				matrix[i][j] = a[i][j];
+				matrix2[i][j] = a[i][j];
 			}
 		}
 	}
 	//Constructor that takes in floats to initialize the 2x2 array
 	Matrix2(float a, float b, float c, float d) {
-		matrix[0][0] = a;
-		matrix[0][1] = b;
-		matrix[1][0] = c;
-		matrix[1][1] = d;
+		matrix2[0][0] = a;
+		matrix2[0][1] = b;
+		matrix2[1][0] = c;
+		matrix2[1][1] = d;
 	}
 	//Name: Print fuction for 4D matrix
 	//Arguments: Takes in no arugments 
@@ -279,7 +279,7 @@ public:
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				std::cout << matrix[i][j] << "  ";
+				std::cout << matrix2[i][j] << "  ";
 			}
 		}
 		std::cout << std::endl;
@@ -292,10 +292,10 @@ public:
 	{
 		Matrix2 tmp = Matrix2
 		(
-			matrix[0][0] * a.matrix[0][0] + matrix[0][1] * a.matrix[1][0],
-			matrix[0][0] * a.matrix[0][1] + matrix[0][1] * a.matrix[1][1],
-			matrix[1][0] * a.matrix[0][0] + matrix[1][1] * a.matrix[1][0],
-			matrix[1][0] * a.matrix[0][1] + matrix[1][1] * a.matrix[1][1]
+			matrix2[0][0] * a.matrix2[0][0] + matrix2[0][1] * a.matrix2[1][0],
+			matrix2[0][0] * a.matrix2[0][1] + matrix2[0][1] * a.matrix2[1][1],
+			matrix2[1][0] * a.matrix2[0][0] + matrix2[1][1] * a.matrix2[1][0],
+			matrix2[1][0] * a.matrix2[0][1] + matrix2[1][1] * a.matrix2[1][1]
 		);
 		return tmp;
 	}
@@ -307,13 +307,12 @@ public:
 	{
 		Vector2 tmp = Vector2
 		(
-			a.x*matrix[0][0] + a.y*matrix[0][1], 
-			a.x*matrix[1][0] + a.y*matrix[1][1]
+			a.x*matrix2[0][0] + a.y*matrix2[1][0], 
+			a.x*matrix2[0][1] + a.y*matrix2[1][1]
 		);
 		return tmp;
 	}
-private:
-	float matrix[2][2];
+	float matrix2[2][2];
 };
 
 class Matrix3
@@ -379,9 +378,9 @@ public:
 	//Then creates a temporay Vector thas holds each float and returns that Vector
 	Vector3 operator * (const Vector3 &a)
 	{
-		float x = (matrix3[0] * a.x) + (matrix3[1] * a.y) + (matrix3[2] * a.z);
-		float y = (matrix3[3] * a.x) + (matrix3[4] * a.y) + (matrix3[5] * a.z);
-		float z = (matrix3[6] * a.x) + (matrix3[7] * a.y) + (matrix3[8] * a.z);
+		float x = (matrix3[0] * a.x) + (matrix3[3] * a.y) + (matrix3[6] * a.z);
+		float y = (matrix3[1] * a.x) + (matrix3[4] * a.y) + (matrix3[7] * a.z);
+		float z = (matrix3[2] * a.x) + (matrix3[5] * a.y) + (matrix3[8] * a.z);
 		Vector3 tmp = Vector3(x, y, z);
 		return tmp;
 	}
@@ -430,7 +429,6 @@ public:
 		*this = *this*RotateZ;
 		return *this;
 	}
-private:
 	float matrix3[9];
 };
 
@@ -446,28 +444,28 @@ public:
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				matrix[i][j] = a[i][j];
+				matrix4[i][j] = a[i][j];
 			}
 		}
 	}
 	//Constructor that takes in floats to initialize the array
 	Matrix4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m, float n, float o, float p) {
-		matrix[0][0] = a;
-		matrix[0][1] = b;
-		matrix[0][2] = c;
-		matrix[0][3] = d;
-		matrix[1][0] = e;
-		matrix[1][1] = f;
-		matrix[1][2] = g;
-		matrix[1][3] = h;
-		matrix[2][0] = i;
-		matrix[2][1] = j;
-		matrix[2][2] = k;
-		matrix[2][3] = l;
-		matrix[3][0] = m;
-		matrix[3][1] = n;
-		matrix[3][2] = o;
-		matrix[3][3] = p;
+		matrix4[0][0] = a;
+		matrix4[0][1] = b;
+		matrix4[0][2] = c;
+		matrix4[0][3] = d;
+		matrix4[1][0] = e;
+		matrix4[1][1] = f;
+		matrix4[1][2] = g;
+		matrix4[1][3] = h;
+		matrix4[2][0] = i;
+		matrix4[2][1] = j;
+		matrix4[2][2] = k;
+		matrix4[2][3] = l;
+		matrix4[3][0] = m;
+		matrix4[3][1] = n;
+		matrix4[3][2] = o;
+		matrix4[3][3] = p;
 	}
 	//Name: Print fuction for 4D matrix
 	//Arguments: Takes in no arugments 
@@ -478,7 +476,7 @@ public:
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				std::cout << matrix[i][j] << "  ";
+				std::cout << matrix4[i][j] << "  ";
 			}
 		}
 		std::cout << std::endl;
@@ -540,7 +538,7 @@ public:
 		Matrix4 tmp = Matrix4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		for (int i = 0; i < 64; i++)
 		{
-			tmp.matrix[(i / 16)][(i % 16) / 4] += matrix[(i / 16)][i % 4] * a.matrix[i % 4][(i % 16) / 4];
+			tmp.matrix4[(i / 16)][(i % 16) / 4] += matrix4[(i / 16)][i % 4] * a.matrix4[i % 4][(i % 16) / 4];
 		}
 		return tmp;
 	}
@@ -553,7 +551,7 @@ public:
 		Vector4 tmp = Vector4(0, 0, 0, 0);
 		for (int i = 0; i < 16; i++)
 		{
-			tmp.VA[i / 4] += matrix[i / 4][i % 4] * a.VA[i % 4];
+			tmp.VA[i / 4] += matrix4[i % 4][i / 4] * a.VA[i % 4];
 		}
 		tmp.x = tmp.VA[0];
 		tmp.y = tmp.VA[1];
@@ -561,7 +559,5 @@ public:
 		tmp.w = tmp.VA[3];
 		return tmp;
 	}
-
-private:
-	float matrix[4][4];
+	float matrix4[4][4];
 };
