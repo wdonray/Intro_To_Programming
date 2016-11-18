@@ -347,7 +347,7 @@ public:
 			0, cos(a), -sin(a),
 			0, sin(a), cos(a)
 		);
-		*this = *this*RotateX;
+		*this = RotateX**this;
 		return *this;
 	}
 	//Name: setRotateX
@@ -362,7 +362,7 @@ public:
 			0, 1, 0, 
 			-sin(a), 0, cos(a)
 		);
-		*this = *this*RotateY;
+		*this = RotateY**this;
 		return *this;
 	}
 	//Name: setRotateX
@@ -377,7 +377,7 @@ public:
 			sin(a), cos(a), 0, 
 			0, 0, 1
 		);
-		*this = *this*RotateZ;
+		*this = RotateZ**this;
 		return *this;
 	}
 	float matrix3[9];
@@ -431,7 +431,7 @@ public:
 			0, sin(a), cos(a), 0, 
 			0, 0, 0, 1
 		);
-		*this = *this*RotateX;
+		*this = RotateX**this;
 		return *this;
 	}
 	//Name: setRotateY
@@ -447,7 +447,7 @@ public:
 			-sin(a), 0, cos(a), 0, 
 			0, 0, 0, 1
 		);
-		*this = *this*RotateY;
+		*this = RotateY**this;
 		return *this;
 	}
 	//Name: setRotateZ
@@ -463,7 +463,7 @@ public:
 			0, 0, 1, 0, 
 			0, 0, 0, 1
 		);
-		*this = *this*RotateZ;
+		*this = RotateZ**this;
 		return *this;
 	}
 	//Name: Overloading the multiplication operator for matrix multiplication
