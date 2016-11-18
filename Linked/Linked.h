@@ -28,7 +28,6 @@ public:
 	{
 		return (first == nullptr) ? true : false;
 	}
-	//
 	const linkedListType<Type>& operator= (const linkedListType<Type>& otherList)
 	{
 		copyList(otherList);
@@ -44,7 +43,6 @@ public:
 			current = current->link;
 		}
 	}
-
 	bool search(const Type& nodeInfo)
 	{
 		linkedListIterator<Type> tmp = linkedListIterator<Type>(begin());
@@ -74,12 +72,17 @@ public:
 	void deleteNode(const Type& nodeInfo)
 	{
 		nodeType<Type>* node = first;
-		if (node->info == nodeInfo)
+		if (node == nullptr)
+		{
+			return;
+		}
+		else if (node->info == nodeInfo)
 		{
 			nodeType<Type> *tmp = node;
 			node = node->link;
 			delete tmp;
 			count--;
+			first = node;
 		}
 		else
 		{
@@ -96,7 +99,6 @@ public:
 				node = node->link;
 			}
 		}
-
 	}
 	~linkedListType<Type>()
 	{
@@ -177,7 +179,6 @@ protected:
 	nodeType<Type> * first;
 	nodeType<Type> * last;
 private:
-	//
 	void copyList(const linkedListType<Type>& otherList)
 	{
 		first = otherList.first;

@@ -66,14 +66,6 @@ public:
 	{
 		return (x * A.x) + (y * A.y);
 	}
-	//Name: print 
-	//Arguments: N/A
-	//Description: Prints each point 
-	void print()
-	{
-		std::cout << x << " , " << y;
-		std::cout << std::endl;
-	}
 	float VA[2];
 	float x, y;
 };
@@ -154,14 +146,6 @@ public:
 		Vector3 tmp = Vector3(y*A.z - z*A.y, x*A.z - z*A.x, z*A.y - z*A.x);
 		return tmp;
 	}
-	//Name: print 
-	//Arguments: N/A
-	//Description: Prints each point 
-	void print()
-	{
-		std::cout << x << " , " << y << " , " << z;
-		std::cout << std::endl;
-	}
 	float VA[3];
 	float x, y, z;
 };
@@ -235,14 +219,6 @@ public:
 	{
 		return (x * A.x) + (y * A.y) + (z * A.z) + (w * A.w);
 	}
-	//Name: print 
-	//Arguments: N/A
-	//Description: Prints each point 
-	void print()
-	{
-		std::cout << x << " , " << y << " , " << z << " , " << w;
-		std::cout << std::endl;
-	}
 	float VA[4];
 	float x, y, z, w;
 };
@@ -269,20 +245,6 @@ public:
 		matrix2[0][1] = b;
 		matrix2[1][0] = c;
 		matrix2[1][1] = d;
-	}
-	//Name: Print fuction for 4D matrix
-	//Arguments: Takes in no arugments 
-	//Description: Loops through the matrix and prints each number
-	void print()
-	{
-		for (int i = 0; i < 2; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				std::cout << matrix2[i][j] << "  ";
-			}
-		}
-		std::cout << std::endl;
 	}
 	//Name: Overloading the multiplication operator for matrix multiplication
 	//Arguments: One argument that takes in 2x2 Matrix
@@ -340,17 +302,6 @@ public:
 		matrix3[6] = g;
 		matrix3[7] = h;
 		matrix3[8] = i;
-	}
-	//Name: Print fuction for 4D matrix
-	//Arguments: Takes in no arugments 
-	//Description: Loops through the matrix and prints each number
-	void print()
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			std::cout << matrix3[i] << "  ";
-		}
-		std::cout << std::endl;
 	}
 	//Name: Overloading the multiplication operator for matrix multiplication
 	//Arguments: One argument that takes in 3x3 Matrix
@@ -466,20 +417,6 @@ public:
 		matrix4[3][1] = n;
 		matrix4[3][2] = o;
 		matrix4[3][3] = p;
-	}
-	//Name: Print fuction for 4D matrix
-	//Arguments: Takes in no arugments 
-	//Description: Loops through the matrix and prints each number
-	void print()
-	{
-		for (int i = 0; i < 4; i++)
-		{
-			for (int j = 0; j < 4; j++)
-			{
-				std::cout << matrix4[i][j] << "  ";
-			}
-		}
-		std::cout << std::endl;
 	}
 	//Name: setRotateX
 	//Arguments: Takes in variable a with type float

@@ -133,37 +133,47 @@
 //	b = a - b;
 //	a = a - b;
 //}
+int mult(int, int);
 
-
-int  twoLargest(int array[], int size)
-{
-		int sumlarge = array[0];
-		int sum2;
-		if (sumlarge > array[1])
-		{
-			sum2 = array[1];
-		}
-		for (int i = 1; i < size; i++)
-		{
-	
-			if (array[i] > sumlarge)
-			{
-				sum2 = sumlarge;
-				sumlarge = array[i];
-	
-			}
-			else if (array[i] > sum2)
-			{
-				sum2 = array[i];
-			}
-		}
-		return sumlarge + sum2;
-}
+//int  twoLargest(int array[], int size)
+//{
+//		int sumlarge = array[0];
+//		int sum2;
+//		if (sumlarge > array[1])
+//		{
+//			sum2 = array[1];
+//		}
+//		for (int i = 1; i < size; i++)
+//		{
+//	
+//			if (array[i] > sumlarge)
+//			{
+//				sum2 = sumlarge;
+//				sumlarge = array[i];
+//	
+//			}
+//			else if (array[i] > sum2)
+//			{
+//				sum2 = array[i];
+//			}
+//		}
+//		return sumlarge + sum2;
+//}
 int main()
 {
-	int arrays[] = { 7, 11, 22, 22, 10 };
-	int sum = twoLargest(arrays, 5);
-	std::cout << sum << std::endl;
+	//int arrays[] = { 7, 11, 22, 22, 10 };
+	//int sum = twoLargest(arrays, 5);
+	//std::cout << sum << std::endl;
+	mult(5, 10);
 	system("pause");
 	return 0;
+}
+int mult(int a, int b)
+{
+	int temp = 0;
+	for (int i = 0; i < b; i++)
+	{
+		temp += a;
+	}
+	return temp;
 }

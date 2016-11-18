@@ -35,7 +35,7 @@ int main()
 	++tmp;
 	A->front();
 	//A->destroyList();
-	A->deleteNode(3);
+	A->deleteNode(54);
 	A->print();
 	bool test = A->search(53);
 	if (test == true)

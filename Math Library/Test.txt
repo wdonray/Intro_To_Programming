@@ -33,7 +33,7 @@ Result:
 19 28 
 
 Matrix2 * Vector2 
-Expected Result: <14 , 18> 
+Expectked Result: <14 , 18> 
 Result:<14,18>
 
 Vector3 = Vector3 
@@ -108,27 +108,27 @@ Expected Result: False / 0
 Result:0
 
 Vector4 + Vector4 
-Expected Result: <6, 8, 10> 
+Expected Result: <14, 5, 4, 8> 
 Result:<14,5,4,8>
 
 Vector4 - Vector4 
-Expected Result: <0 , 0, 0> 
+Expected Result: <0, 1, 0, 0> 
 Result:<0,1,0,0>
 
 Vector4 * 4 
-Expected Result: <9, 12, 15> 
-Result:<21,9,6,12>
+Expected Result: <21, 9, 6, 12> 
+Result:<28,12,8,16>
 
 Matrix4 Magnitude 
-Expected Result: 7.07107 / sqrt{2} * 5  
+Expected Result: 8.83176 
 Result:8.83176
 
 Matrix4 Normalize 
-Expected Result: <0.424264, 0.565685, 0.707107>  
+Expected Result: <0.792594,0.339683,0.226455,0.452911>  
 Result:<0.792594,0.339683,0.226455,0.452911>
 
 Matrix4 DotProduct 
-Expected Result: 50  
+Expected Result: 75  
 Result:75
 
 Matrix4 * Matrix4 
