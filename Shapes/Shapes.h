@@ -80,24 +80,27 @@ private:
 class Line : public BaseShape
 {
 public:
-	Line(float x, float y, float x2, float y2, float length, std::string c)
+	Line(float x, float y, float x2, float y2, std::string c)
 	{
 		this->m_X = x;
 		this->m_Y = y;
 		m_X2 = x2;
 		m_Y2 = y2;
-		m_Length = length;
 		m_Color = c;
 	}
 	void DebugPrint() override
 	{
 		std::cout << "\nOne end of line Position: " << m_X << "," << m_Y << std::endl;
 		std::cout << "\nOther end of line Position: " << m_X2 << "," << m_Y2 << std::endl;
-		std::cout << "\nLength: " << m_Length << std::endl;
+		std::cout << "\nLength: " << Length() << std::endl;
 		std::cout << "\nColor: " << m_Color << std::endl;
 	}
+	float Length()
+	{
+		return sqrt(pow(m_X2 - m_X, 2) + pow(m_Y2 - m_Y, 2));
+	}
 private:
-	float m_X2, m_Y2, m_Length; // Two points correct?
+	float m_X2, m_Y2; // Two points correct?
 	std::string m_Color;
 };
 class Triangle : public BaseShape
