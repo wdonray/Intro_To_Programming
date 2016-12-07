@@ -9,24 +9,34 @@ class BaseShape
 {
 public:
 	virtual void DebugPrint() = 0;
-	//float m_X, m_Y; //Cannot figure out how this works
+	float m_X, m_Y;
 };
 class Point : public BaseShape
 {
 public:
 	Point() {};
-	Point(float X, float Y) : m_X(X), m_Y(Y) {}
+	Point(float x, float y)
+	{
+		this->m_X = x;
+		this->m_Y = y;
+	}
 	void DebugPrint() override
 	{
 		std::cout << "\nPoint Position: " << m_X << "," << m_Y << std::endl;
 	}
-private:
-	float m_X, m_Y;
 };
 class Rectangle : public BaseShape
 {
 public:
-	Rectangle(float X, float Y, float H, float W, std::string C) : m_X(X), m_Y(Y), m_Height(H), m_Width(W), m_Color(C) {}
+	Rectangle(float x, float y, float h, float w, std::string c)
+	{
+		this->m_X = x;
+		this->m_Y = y;
+		m_Height = h;
+		m_Width = w;
+		m_Color = c;
+	}
+
 	void DebugPrint() override
 	{
 		std::cout << "\nRectangle Position: " << m_X << "," << m_Y << "\nRectangle Height:" << m_Height << std::endl;
@@ -34,13 +44,19 @@ public:
 		std::cout << "\nColor: " << m_Color << std::endl;
 	}
 private:
-	float m_X, m_Y, m_Height, m_Width;
+	float m_Height, m_Width;
 	std::string m_Color;
 };
 class Circle : public BaseShape
 {
 public:
-	Circle(float X, float Y, float R, std::string C) : m_X(X), m_Y(Y), m_Radius(R), m_Color(C) {}
+	Circle(float x, float y, float r, std::string c)
+	{
+		this->m_X = x;
+		this->m_Y = y;
+		m_Radius = r;
+		m_Color = c;
+	}
 	void DebugPrint() override
 	{
 		std::cout << "\nCircle Position: " << m_X << "," << m_Y << std::endl;
@@ -54,17 +70,25 @@ public:
 		return 2 * PI*(m_Radius);
 	}
 	float Area()
-	{	
+	{
 		return PI * (m_Radius * m_Radius);
 	}
 private:
-	float m_X, m_Y, m_Radius;
+	float m_Radius;
 	std::string m_Color;
 };
 class Line : public BaseShape
 {
 public:
-	Line(float X, float Y, float X2, float Y2, float L, std::string C) : m_X(X), m_Y(Y), m_X2(X2), m_Y2(Y2), m_Length(L), m_Color(C) {}
+	Line(float x, float y, float x2, float y2, float length, std::string c)
+	{
+		this->m_X = x;
+		this->m_Y = y;
+		m_X2 = x2;
+		m_Y2 = y2;
+		m_Length = length;
+		m_Color = c;
+	}
 	void DebugPrint() override
 	{
 		std::cout << "\nOne end of line Position: " << m_X << "," << m_Y << std::endl;
@@ -73,7 +97,7 @@ public:
 		std::cout << "\nColor: " << m_Color << std::endl;
 	}
 private:
-	float m_X, m_Y, m_X2, m_Y2, m_Length; // Two points correct?
+	float m_X2, m_Y2, m_Length; // Two points correct?
 	std::string m_Color;
 };
 class Triangle : public BaseShape
