@@ -498,3 +498,17 @@ public:
 	}
 	float matrix4[4][4];
 };
+
+class Agent
+{
+public:
+	Agent(Vector2 position, Vector2 velocity): position(position), velocity(velocity){}
+	bool AddForce(Vector2 force)
+	{
+
+	}
+private:
+	Vector2 position;
+	Vector2 velocity;
+	float mass;
+};
