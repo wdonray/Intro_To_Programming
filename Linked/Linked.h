@@ -52,7 +52,7 @@ public:
 	}
 	//Function to determine whether node is in the list
 	//Postcondition: Returns true if node is in the list
-	//otherwise teh value false is returned
+	//otherwise the value false is returned
 	bool search(const Type& nodeInfo)
 	{
 		linkedListIterator<Type> tmp = linkedListIterator<Type>(begin());
@@ -82,7 +82,7 @@ public:
 		count = 0;
 	}
 	//Function to delete node from the list
-	//Postcondition: If found, the node containing the node is deleted from the list. first points to
+	//Postcondition: If found, the node containing the node is deleted from the list. First points to
 	//the first node, last points to the last node of the update list, and count is decremented by 1
 	void deleteNode(const Type& nodeInfo)
 	{
@@ -154,7 +154,7 @@ public:
 	{
 		copyList(otherList);
 	}
-	//Function to insert node at the begining of the list
+	//Function to insert node at the beginning of the list
 	//Postcondition: first points to the new list, node is inserted 
 	//at the beginning of the list, last points to the last node in
 	//the list, and count is incremented by 1;
@@ -196,13 +196,13 @@ public:
 		assert(count != 0);
 		return first->info;
 	}
-	//Function to return an iterator at the begining of the linked list
-	//Postcondition: Returns an iteratir such that the current is set to first
+	//Function to return an iterator at the beginning of the linked list
+	//Postcondition: Returns an iterator such that the current is set to first
 	linkedListIterator<Type> begin()
 	{
 		return linkedListIterator<Type>(first);
 	}
-	//Funcion to rturn an iterator at the end of the linked list
+	//Function to return an iterator at the end of the linked list
 	//Postcondition: Returns an iterator such that current is set to NULL
 	linkedListIterator<Type> end()
 	{
